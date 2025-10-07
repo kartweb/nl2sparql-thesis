@@ -5,7 +5,7 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 class RAG:
-    def __init__(self, endpoint_url="http://localhost:9999/blazegraph/"):
+    def __init__(self, endpoint_url="http://localhost:9999/blazegraph/sparql"):
         self.sparql = SPARQLWrapper(endpoint_url)
         self.sparql.setReturnFormat(JSON)
 
@@ -35,7 +35,7 @@ class RAG:
                 for r in bindings
             ]
         except Exception as e:
-            print(e)
+            print(f"error: {e}")
             triples = []
         
         return triples

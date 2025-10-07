@@ -1,10 +1,728 @@
 [
-    {
-        "nl": "Find all distinct named graphs and their Triples",
-        "sparql": "SELECT ?g (COUNT(*) AS ?tripleCount)\nWHERE {\n  GRAPH ?g {\n    ?s ?p ?o .\n  }\n}\nGROUP BY ?g"
+  {
+    "nl": "Find all distinct named graphs and their Triples",
+    "sparql": "SELECT ?g (COUNT(*) AS ?tripleCount)\nWHERE {\n  GRAPH ?g {\n    ?s ?p ?o .\n  }\n}\nGROUP BY ?g",
+    "idx": 0,
+    "retrieved_triples": {
+      "Find": [],
+      "all": [
+        [
+          "https://w3id.org/CDIO/believe/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants from four different geographic area of bangladesh: urban (mirpur), urban-slum (bauniabadh), rural (matlab), and a new rural setting in belabo. the somascan 7k assay is available for all cohort members. the assay provides ~7000 protein measurements per sample."
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f10_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f11_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f12_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f13_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f14_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f3_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f4_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f5_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f6_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f7_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f8_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f9_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f99_allopuri"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "to investigate whether long-term administration of n-3 pufa and rosuvastatin is more effective than the corresponding placebo in reducing all-cause mortality and all-cause mortality or hospitalizations for cardiovascular reasons"
+        ],
+        [
+          "https://w3id.org/CDIO/pnh-dp5/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "age=39\u00b112, bmi= 22\u00b19.4 kg/m\u00b2. 71% female. all individuals had non-fasting blood glucose in the normal range (<7.8 mmol/l), excluding unknown diabetes."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort1/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants were initially recruited from the ommoord district in rotterdam, the netherlands, starting with 7,983 persons aged 55 years or older. in 2000, 3,011 new participants aged 55 or older were added. in 2006, the cohort was extended to include 3,932 subjects aged 45-54 years."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort2/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants were initially recruited from the ommoord district in rotterdam, the netherlands, starting with 7,983 persons aged 55 years or older. in 2000, 3,011 new participants aged 55 or older were added. in 2006, the cohort was extended to include 3,932 subjects aged 45-54 years."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort3/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants were initially recruited from the ommoord district in rotterdam, the netherlands, starting with 7,983 persons aged 55 years or older. in 2000, 3,011 new participants aged 55 or older were added. in 2006, the cohort was extended to include 3,932 subjects aged 45-54 years."
+        ],
+        [
+          "https://w3id.org/CDIO/thebox/secondary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "blood pressure, cholesterol values, guideline adherence (measurement adherence). patient satisfaction (general and smart technology-specific questionnaires), all-cause mortality,hospitalizations for nonfatal adverse cardiac events"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/all_cause_death_hfhosp"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/all_cause_death_hospitalisation"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/allaes"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/allergien"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/ep_hosp_all"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/firstallae"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/firsttraumafallae"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/fu_hosp_all"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/gallenblase"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/icd_all"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/maxallaeseverity"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/maxtraumafallaeseverity"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/number_events_all_hosp"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/numberhosp_all"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/sumallaeseverity"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/sumtraumafallaeseverity"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/totaldurationall"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/totaldurationtraumafall"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/traumafallaes"
+        ]
+      ],
+      "distinct": [],
+      "named": [],
+      "graphs": [],
+      "and": [
+        [
+          "https://w3id.org/CDIO/avanti/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/believe/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants from four different geographic area of bangladesh: urban (mirpur), urban-slum (bauniabadh), rural (matlab), and a new rural setting in belabo. the somascan 7k assay is available for all cohort members. the assay provides ~7000 protein measurements per sample."
+        ],
+        [
+          "https://w3id.org/CDIO/believe/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "the study is designed to quantify the burden and trends of non-communicable diseases (ncds), including cardiovascular, metabolic, respiratory, and neoplastic diseases, and related risk factors across different geographical settings in bangladesh and identify their demographic, societal, economic, and hereditary drivers."
+        ],
+        [
+          "https://w3id.org/CDIO/bigfoot/primary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "bio-impedance will be evaluated in fluid status assessment (blood pressure, total body water, extracellular volume and intracellular volume). bio-impedance will be measured by several devices and compared to fluid-related complaints from patients, physical examination, weight changes, echography of the vena cava inferior collapse and lung tissue, and haemoconcentration"
+        ],
+        [
+          "https://w3id.org/CDIO/bigfoot/secondary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "intra-and interdialytic haemodynamic physiology of haemodialysis patients will be investigated. volume- and pressure dynamics over the intra- and extracellular compartment are of interest"
+        ],
+        [
+          "https://w3id.org/CDIO/biostat-chf/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/canvas/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/canvas/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "composite of non-fatal myocardial infarandomized controlled trialion, non-fatal stroke, and cv-related death(defined as death occurring within 30 days after a diagnosis of myocardial infarandomized controlled trialion, stroke, unstable angina, heart failure, sudden cardiac arrest, cardiogenic shock, other cerebrovascular events, or other cv events recorded in a medical claim in any setting)"
+        ],
+        [
+          "https://w3id.org/CDIO/cardiateam/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "patients with/without heart failure with preserved ejection fraction(hfpef) and/or diabetes type 2 (t2dm)"
+        ],
+        [
+          "https://w3id.org/CDIO/cardiateam/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "assess diabetic cardiomyopathy (dcm) relative to other forms of cardiomyopathy based on deep phenotyping (clinical, imaging and biological) information"
+        ],
+        [
+          "https://w3id.org/CDIO/check-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/check-hf/interventie_ander"
+        ],
+        [
+          "https://w3id.org/CDIO/comrate/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "examine whether the ecg signal that a new wearable device measures and transmits corresponds to validated standard ecg systems, in other words whether the results from the new device are reliable"
+        ],
+        [
+          "https://w3id.org/CDIO/cycle/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/dapa-hf/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/ear/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "patients with chronic obstructive pulmonary disease (copd) and heart failure"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-3/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-af/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants were recruited, men and women,  with symptomatic heart failure with no age limitations.clinical evidence of heart failure of any etiology classified as new york heart association (nyha) class ii-iv according to the european society of cardiology (esc) guidelines. left ventricular ejection fraction (lvef) measured within 3 months of enrollment. if lvef > 40%, at least one hospital admission for congestive heart failure in the previous year is required"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/primary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "the study had two co-primary endpoints: time to death, and time to death or admission to hospital for cardiovascular reasons"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/datarand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f10_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f10_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f11_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f11_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f12_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f12_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f13_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f13_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f14_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f3_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f3_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f4_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f4_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f5_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f5_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f6_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f6_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f7_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f7_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f8_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f8_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f9_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f9_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f99_dtrand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/f99_trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/gissi-hf/trand"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-hf/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "to investigate whether long-term administration of n-3 pufa and rosuvastatin is more effective than the corresponding placebo in reducing all-cause mortality and all-cause mortality or hospitalizations for cardiovascular reasons"
+        ],
+        [
+          "https://w3id.org/CDIO/gissi-prevention/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/gluco-insight/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "patients with t2dm on lifestyle and/or metformin, age 62.3 \u00b1 7.2 years, male/female = 22/19, diabetes duration = 9.7 \u00b1 6.5 years"
+        ],
+        [
+          "https://w3id.org/CDIO/gluco-insight/study_contact_email",
+          "https://w3id.org/CDIO/has_value",
+          "willem.vandenbrink@tno.nl"
+        ],
+        [
+          "https://w3id.org/CDIO/gluco-insight/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "single-arm cross-over randomized intervention"
+        ],
+        [
+          "https://w3id.org/CDIO/horuz/primary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "the association between fluid status and kidney function decline in patients with ckd stage 3 (ckd-epi 60-30ml/min), 4 (ckd-epi 30-15ml/min) and 5 (ckd-epi < 15 ml/min) is the primary objective of the horuz study. the primary endpoint is the mean egfr decline which will be compared between the fo-group and the non-fo-group. bis-measured fo will be expressed as overhydration (oh) normalized to ecw and noted as a percentage of ecw (oh/ecw).6,44 fo is defined as an oh/ecw ? 7% (or an absolute oh ? 1.1 l)."
+        ],
+        [
+          "https://w3id.org/CDIO/horuz/secondary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "the secondary objective is to identify the clinical factors associated with fo during a longitudinal follow up. secondary outcomes of interest are the central volume status (measured by echocardiography and thoracic bis in combination with photoplethysmography), bp, the cardiac systolic and diastolic function, cv events, hospitalizations, inflammatory- and nutrition status, and quality of life, between ckd stages 3, 4 and 5"
+        ],
+        [
+          "https://w3id.org/CDIO/horuz/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "the primary objective of the horuz study is to associate fluid status with kidney function decline in patients with ckd stage 3 (ckd-epi egfr 60-30ml/min), 4 (30-15ml/min) and 5 (< 15 ml/min) and compare them to an age- and sex- matched healthy control group. primary outcome is the mean egfr decline which will be compared between the fo-group and the non-fo-group"
+        ],
+        [
+          "https://w3id.org/CDIO/interval/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "blood donors recruited between june 2012 and june 2014 at nhs blood and transplant (nshbt) blood donation centres across england"
+        ],
+        [
+          "https://w3id.org/CDIO/panache/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/pantheon/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/paradigm/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/pnh-dp5/study_contact_email",
+          "https://w3id.org/CDIO/has_value",
+          "willem.vandenbrink@tno.nl"
+        ],
+        [
+          "https://w3id.org/CDIO/pnh-n1/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "patients living with overweight and/or  diabetes type 2( t2dm)"
+        ],
+        [
+          "https://w3id.org/CDIO/pnh-n1/study_contact_email",
+          "https://w3id.org/CDIO/has_value",
+          "willem.vandenbrink@tno.nl"
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort1/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants were initially recruited from the ommoord district in rotterdam, the netherlands, starting with 7,983 persons aged 55 years or older. in 2000, 3,011 new participants aged 55 or older were added. in 2006, the cohort was extended to include 3,932 subjects aged 45-54 years."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort1/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "the study aims to investigate the epidemiology of cardiometabolic disorders, including coronary heart disease (chd), heart failure (hf), atrial fibrillation (af), type 2 diabetes (t2d), and metabolic syndrome. it focuses on understanding the etiology, prediction, and prognosis of these conditions, providing sex- and gender-specific insights across the spectrum of cardiometabolic disorders."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort2/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants were initially recruited from the ommoord district in rotterdam, the netherlands, starting with 7,983 persons aged 55 years or older. in 2000, 3,011 new participants aged 55 or older were added. in 2006, the cohort was extended to include 3,932 subjects aged 45-54 years."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort2/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "the study aims to investigate the epidemiology of cardiometabolic disorders, including coronary heart disease (chd), heart failure (hf), atrial fibrillation (af), type 2 diabetes (t2d), and metabolic syndrome. it focuses on understanding the etiology, prediction, and prognosis of these conditions, providing sex- and gender-specific insights across the spectrum of cardiometabolic disorders."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort3/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "participants were initially recruited from the ommoord district in rotterdam, the netherlands, starting with 7,983 persons aged 55 years or older. in 2000, 3,011 new participants aged 55 or older were added. in 2006, the cohort was extended to include 3,932 subjects aged 45-54 years."
+        ],
+        [
+          "https://w3id.org/CDIO/rotterdamstudycohort3/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "the study aims to investigate the epidemiology of cardiometabolic disorders, including coronary heart disease (chd), heart failure (hf), atrial fibrillation (af), type 2 diabetes (t2d), and metabolic syndrome. it focuses on understanding the etiology, prediction, and prognosis of these conditions, providing sex- and gender-specific insights across the spectrum of cardiometabolic disorders."
+        ],
+        [
+          "https://w3id.org/CDIO/thebox/inclusion_criteria",
+          "https://w3id.org/CDIO/has_value",
+          "eligible patients included those with st-elevation myocardial infarction (stemi) and non-st-elevation myocardial infarction (nstemi). ami was defined by european society of cardiology (esc) guidelines. patients were treated with primary percutaneous coronary intervention (pci) \u226448 hours after symptom onset"
+        ],
+        [
+          "https://w3id.org/CDIO/thebox/primary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "overlap between predicted decisions and actual decisions. proportion of patients with controlled bp after 1 year of follow-up, defined as systolic bp \u2264139 mm hg and diastolic bp \u226489 mm hg"
+        ],
+        [
+          "https://w3id.org/CDIO/thebox/secondary_outcome",
+          "https://w3id.org/CDIO/has_value",
+          "blood pressure, cholesterol values, guideline adherence (measurement adherence). patient satisfaction (general and smart technology-specific questionnaires), all-cause mortality,hospitalizations for nonfatal adverse cardiac events"
+        ],
+        [
+          "https://w3id.org/CDIO/thebox/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "modelling clinical decision making and out patient management of risk factor for cardiovascular disease. to investigate whether smart technology in clinical practice can improve blood pressure (bp) regulation"
+        ],
+        [
+          "https://w3id.org/CDIO/tim-hf/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/tim-hf2/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_execution",
+          "https://w3id.org/CDIO/has_value",
+          "randomized controlled trial"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpdiaststand1"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpdiaststand12"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpdiaststand18"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpdiaststand3"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpdiaststand6"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpdiaststanding"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpsyststand1"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpsyststand12"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpsyststand18"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpsyststand3"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpsyststand6"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/bpsyststanding"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/hrstand1"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/hrstand12"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/hrstand18"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/hrstand3"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/hrstand6"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+          "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+          "https://w3id.org/CDIO/time-chf/hrstanding"
+        ],
+        [
+          "https://w3id.org/CDIO/time-chf/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "nt pro-bnp guided therapy vs standard care, comparing young vs old patients as well"
+        ]
+      ],
+      "their": [
+        [
+          "https://w3id.org/CDIO/believe/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "the study is designed to quantify the burden and trends of non-communicable diseases (ncds), including cardiovascular, metabolic, respiratory, and neoplastic diseases, and related risk factors across different geographical settings in bangladesh and identify their demographic, societal, economic, and hereditary drivers."
+        ],
+        [
+          "https://w3id.org/CDIO/ear/study_primary_purpose_specification",
+          "https://w3id.org/CDIO/has_value",
+          "study is to acquire signals using the biopac or a wearable multi-parametric sensor device from imec to evaluate their use for respiratory analysis"
+        ]
+      ],
+      "Triples": []
     },
-    {
-        "nl": "Find all studies of diabetes disease",
-        "sparql": "PREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cdio: <https://w3id.org/CDIO/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?study \nWHERE {\n  GRAPH <https://w3id.org/CDIO/graph/studies> {\n    ?study a obi:study_design_execution ;\n           bfo:concretizes ?study_design .\n    ?study_design bfo:has_part ?protocol .\n\n    # Primary purpose specification\n    ?protocol bfo:has_part ?study_primary_purpose_specification .\n    ?study_primary_purpose_specification a cdio:study_primary_purpose_specification ;\n                                         cdio:has_value ?purpose .\n\n    # Inclusion criteria pattern (optional)\n    OPTIONAL {\n      ?protocol bfo:has_part ?inclusionInst .\n      ?inclusionInst a cdio:inclusion_criteria ;\n                    cdio:has_value ?inclusion .\n    }\n\n    # Filter: Only include studies where the primary purpose or inclusion criteria contain \"diabetes\"\n    FILTER( regex(lcase(str(?purpose)), 'diabetes') || (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'diabetes')) )\n  }\n}" 
+    "fewshot": {
+      "similarity_score": 0.17077611319011654,
+      "best_match_nl": "Find all studies of diabetes disease",
+      "best_match_sparql": "PREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cdio: <https://w3id.org/CDIO/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?study \nWHERE {\n  GRAPH <https://w3id.org/CDIO/graph/studies> {\n    ?study a obi:study_design_execution ;\n           bfo:concretizes ?study_design .\n    ?study_design bfo:has_part ?protocol .\n\n    # Primary purpose specification\n    ?protocol bfo:has_part ?study_primary_purpose_specification .\n    ?study_primary_purpose_specification a cdio:study_primary_purpose_specification ;\n                                         cdio:has_value ?purpose .\n\n    # Inclusion criteria pattern (optional)\n    OPTIONAL {\n      ?protocol bfo:has_part ?inclusionInst .\n      ?inclusionInst a cdio:inclusion_criteria ;\n                    cdio:has_value ?inclusion .\n    }\n\n    # Filter: Only include studies where the primary purpose or inclusion criteria contain \"diabetes\"\n    FILTER( regex(lcase(str(?purpose)), 'diabetes') || (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'diabetes')) )\n  }\n}"
     }
+  },
+  {
+    "nl": "Find all studies of diabetes disease",
+    "sparql": "PREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cdio: <https://w3id.org/CDIO/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?study \nWHERE {\n  GRAPH <https://w3id.org/CDIO/graph/studies> {\n    ?study a obi:study_design_execution ;\n           bfo:concretizes ?study_design .\n    ?study_design bfo:has_part ?protocol .\n\n    # Primary purpose specification\n    ?protocol bfo:has_part ?study_primary_purpose_specification .\n    ?study_primary_purpose_specification a cdio:study_primary_purpose_specification ;\n                                         cdio:has_value ?purpose .\n\n    # Inclusion criteria pattern (optional)\n    OPTIONAL {\n      ?protocol bfo:has_part ?inclusionInst .\n      ?inclusionInst a cdio:inclusion_criteria ;\n                    cdio:has_value ?inclusion .\n    }\n\n    # Filter: Only include studies where the primary purpose or inclusion criteria contain \"diabetes\"\n    FILTER( regex(lcase(str(?purpose)), 'diabetes') || (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'diabetes')) )\n  }\n}",
+    "idx": 1,
+    "retrieved_triples": {
+      "Find": [],
+      "all": [],
+      "studies": [],
+      "of": [],
+      "diabetes": [],
+      "disease": []
+    },
+    "fewshot": {
+      "best_match_nl": "Find all distinct named graphs and their Triples",
+      "similarity_score": 0.17077611319011654,
+      "best_match_sparql": "SELECT ?g (COUNT(*) AS ?tripleCount)\nWHERE {\n  GRAPH ?g {\n    ?s ?p ?o .\n  }\n}\nGROUP BY ?g"
+    }
+  }
 ]

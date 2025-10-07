@@ -1,6 +1,0 @@
-[
-    {
-        "nl": "Find all studies of diabetes disease",
-        "sparql": "PREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cdio: <https://w3id.org/CDIO/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?study \nWHERE {\n  GRAPH <https://w3id.org/CDIO/graph/studies> {\n    ?study a obi:study_design_execution ;\n           bfo:concretizes ?study_design .\n    ?study_design bfo:has_part ?protocol .\n\n    # Primary purpose specification\n    ?protocol bfo:has_part ?study_primary_purpose_specification .\n    ?study_primary_purpose_specification a cdio:study_primary_purpose_specification ;\n                                         cdio:has_value ?purpose .\n\n    # Inclusion criteria pattern (optional)\n    OPTIONAL {\n      ?protocol bfo:has_part ?inclusionInst .\n      ?inclusionInst a cdio:inclusion_criteria ;\n                    cdio:has_value ?inclusion .\n    }\n\n    # Filter: Only include studies where the primary purpose or inclusion criteria contain \"diabetes\"\n    FILTER( regex(lcase(str(?purpose)), 'diabetes') || (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'diabetes')) )\n  }\n}" 
-    }
-]
