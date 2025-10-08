@@ -5,7 +5,7 @@ from methods.rag import RAG # class file rag.py
 from utils.preprocessing import tokenize # tokenize function from preprocessing.py
 from methods.fewshot import FewShot
 
-def main(current_idx=0):
+def main(current_idx=4):
     rag = RAG() 
     fewshot = FewShot()
 
