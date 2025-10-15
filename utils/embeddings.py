@@ -1,1 +1,0 @@
-# cosine similarity, vector storage

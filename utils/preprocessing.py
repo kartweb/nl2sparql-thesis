@@ -1,9 +1,9 @@
-# tokenization, stemming, lemmatization
-# stemming is faster and simpler (roughter matching)
-# lemmatization is slower and more accurate
+from nltk.corpus import stopwords
 
-#simplest tokenization method using split method 
+stop_words = set(stopwords.words('english'))
 
 def tokenize(text):
     return text.split()
 
+def remove_stop_words(tokens):
+    return [word for word in tokens if word not in stop_words]

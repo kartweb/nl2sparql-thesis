@@ -23,20 +23,20 @@ class Getter:
     def get_sparql(self, idx):
         return self.get_entry(idx)["sparql"]
     
-    def get_triples(self, idx):
+    def get_terms(self, idx):
         entry = self.get_entry(idx)
-        triples = entry.get("retrieved_triples", {}) # safely handle missing keys
-        return triples
+        terms = entry.get("retrieved_terms", {}) 
+        return terms
     
-    def get_fewshot(self, idx):
+    def get_embeddings(self, idx):
         entry = self.get_entry(idx)
-        fewshot = entry.get("fewshot", {}) # safely handle missing keys
-        return fewshot
+        embeddings = entry.get("retrieved_embeddings", {})
+        return embeddings
     
 if __name__ == "__main__":
     getter = Getter()
-    idx = 4
-    out = str(getter.get_triples(idx))
+    idx = 3
+    out = str(getter.get_embeddings(idx))
     with open("utils/output.txt", "w",encoding="utf-8") as f:
         f.write(out)
 

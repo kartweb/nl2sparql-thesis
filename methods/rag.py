@@ -1,7 +1,3 @@
-#retrieve all triples matcing with tokens
-#retrieve all paths connecting tokens
-#using blazegraph natively over pythong networkx and rdflib for scalability 
-
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 class RAG:
@@ -9,9 +5,9 @@ class RAG:
         self.sparql = SPARQLWrapper(endpoint_url)
         self.sparql.setReturnFormat(JSON)
 
-    def retrieve_triples(self, token):
+    def retrieve_terms(self, token):
         """Retrieve triples containing the token in subject, predicate, or object"""
-        #double {{ to escape f-string }}
+        token_lower = token.lower()
         query = f"""
         SELECT ?s ?p ?o WHERE {{ 
             GRAPH <https://w3id.org/CDIO/graph/studies> {{
@@ -25,17 +21,20 @@ class RAG:
         }} 
         """
         
-        self.sparql.setQuery(query) #set the sparql query text
+        self.sparql.setQuery(query) 
         
         try:
-            results = self.sparql.queryAndConvert() #execute the query and convert the results to JSON
+            results = self.sparql.queryAndConvert() 
             bindings = results["results"]["bindings"]
-            triples = [
-                (r["s"]["value"], r["p"]["value"], r["o"]["value"]) 
-                for r in bindings
-            ]
+
+            terms = []
+            for r in bindings:
+                for part in ["s","p","o"]:
+                    value = r[part]["value"]
+                    if token_lower in value.lower():
+                        terms.append(value)
         except Exception as e:
             print(f"error: {e}")
-            triples = []
+            terms = []
         
-        return triples
+        return terms
