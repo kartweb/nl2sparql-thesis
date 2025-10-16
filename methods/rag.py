@@ -19,6 +19,7 @@ class RAG:
                 )
             }}
         }} 
+        LIMIT 30
         """
         
         self.sparql.setQuery(query) 

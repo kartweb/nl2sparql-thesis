@@ -1,0 +1,26 @@
+from utils.mistral_runner import run_mistral
+from methods.multihop import MultiHop
+
+mh = MultiHop()
+triples = mh.retrieve_one_hop("https://w3id.org/CDIO/time-chf/diabetes")
+
+prompt = prompt = f"""
+You are exploring a knowledge graph.
+
+Below are all triples connected to the current node:
+
+{triples}
+
+TASK:
+Choose exactly ONE triple to expand next.
+
+RESPONSE RULES:
+- Output ONLY the chosen triple in the form: <subject> <predicate> <object>
+- Do NOT include any explanations, reasoning, or extra text.
+- Do NOT use quotes, bullet points, or Markdown formatting.
+- If no suitable triple exists, output: NONE
+"""
+
+answer = run_mistral(prompt)
+
+print(answer)

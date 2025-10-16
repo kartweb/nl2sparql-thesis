@@ -7,7 +7,7 @@ with open(file_path, 'r') as f:
     data = json.load(f)
 
 cleaned_data = [
-    {k: item[k] for k in ("nl", "sparql") if k in item}
+    {k: item[k] for k in ("nl", "nl_keywords", "sparql") if k in item}
     for item in data
 ]
 

@@ -15,7 +15,7 @@ def main(current_idx=4):
         p["idx"] = i
 
     current_pair = pairs[current_idx]
-    tokens = tokenize(current_pair["nl"])
+    tokens = tokenize(current_pair["nl_keywords"])
     # remove stop words
     tokens = remove_stop_words(tokens)
 

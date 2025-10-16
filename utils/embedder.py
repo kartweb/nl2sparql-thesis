@@ -31,7 +31,7 @@ def embed_names(all_names, batch_size=128):
 
 def embed_sim(token_emb, all_embs, all_names):
     sims = cosine_similarity(token_emb, all_embs)[0] # [0] cus im only passing one word
-    top_idx = np.argsort(sims)[::-1][:5] # Sort descending top 5 most similar
+    top_idx = np.argsort(sims)[::-1][:30] # Sort descending top 5 most similar
 
     top_matches = [
         {"text": all_names[j], "score": float(sims[j])}
