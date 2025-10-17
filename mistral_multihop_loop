@@ -1,26 +1,63 @@
 from utils.mistral_runner import run_mistral
 from methods.multihop import MultiHop
+import json
 
-mh = MultiHop()
-triples = mh.retrieve_one_hop("https://w3id.org/CDIO/time-chf/diabetes")
+def auto_onehop(start_entity, hops=5):
+    mh = MultiHop()
+    current = start_entity
+    path = [current]
 
-prompt = prompt = f"""
-You are exploring a knowledge graph.
+    for _ in range(hops):
+        triples = mh.retrieve_one_hop(current)
+        if not triples:
+            break
 
-Below are all triples connected to the current node:
+        prompt = f"""
+        Choose exactly one triple and output only the triple no other text or explanations:
 
-{triples}
+        triples:
+        {triples}
+        """
 
-TASK:
-Choose exactly ONE triple to expand next.
+        ans = run_mistral(prompt).strip()
 
-RESPONSE RULES:
-- Output ONLY the chosen triple in the form: <subject> <predicate> <object>
-- Do NOT include any explanations, reasoning, or extra text.
-- Do NOT use quotes, bullet points, or Markdown formatting.
-- If no suitable triple exists, output: NONE
-"""
+        # loop all triples t and check if every part s,p,o appears inside model text output ans and if yes then return first triple
+        match = next((t for t in triples if all(x in ans for x in t)), None)
+        if not match:
+            break
 
-answer = run_mistral(prompt)
+        s, _, o = match
+        current = o if s == current else s
+        path.append(current)
+    
+    return path
 
-print(answer)
+def save_hop_path(idx, path, hop_type="onehop"):
+    with open("data/nl2sparql_pairs.json", "r") as f:
+        pairs = json.load(f)
+    
+    if 0 <= idx < len(pairs):
+        if hop_type == "nhop":
+            pairs[idx]["nhop_path"] = path
+            print("N-hop path saved")
+        else:
+            pairs[idx]["onehop_path"] = path
+            print("One-hop path saved")
+    else:
+        print(f"Index {idx} out of range.")
+        return
+    
+    with open("data/nl2sparql_pairs.json", "w") as f:
+        json.dump(pairs, f, indent=2)
+
+
+if __name__ == "__main__":
+    idx = 4
+    term = "<https://w3id.org/CDIO/dysfunction-dm/protocol>"
+    # path = auto_onehop(term)
+    
+    mh = MultiHop()
+    path = mh.retrieve_n_hops(term)
+    
+    save_hop_path(idx, path, hop_type="nhop")
+    print(path)

@@ -291,7 +291,37 @@
           "score": 0.4334229826927185
         }
       ]
-    }
+    },
+    "onehop_path": [
+      "<https://w3id.org/CDIO/time-chf/hr>",
+      "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+      "https://w3id.org/CDIO/time-chf/protocol",
+      "https://w3id.org/CDIO/time-chf/number_of_study_participants_specification",
+      "https://w3id.org/CDIO/time-chf/protocol",
+      "https://w3id.org/CDIO/time-chf/study_design"
+    ],
+    "nhop_path": [
+      [
+        "https://w3id.org/CDIO/time-chf/study_design_execution",
+        "http://purl.obolibrary.org/obo/bfo.owl/concretizes",
+        "https://w3id.org/CDIO/time-chf/study_design"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/study_design",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/time-chf/protocol"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/protocol",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/time-chf/study_design_variable_specification"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+        "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+        "https://w3id.org/CDIO/time-chf/diabetes"
+      ]
+    ]
   },
   {
     "nl": "Find all studies of coronary heart disease",
@@ -732,7 +762,40 @@
           "score": 0.4334229826927185
         }
       ]
-    }
+    },
+    "multihop_path": [
+      "<https://w3id.org/CDIO/time-chf/angina>",
+      "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+      "https://w3id.org/CDIO/time-chf/dosebbbl",
+      "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+      "https://w3id.org/CDIO/time-chf/protocol",
+      "https://w3id.org/CDIO/time-chf/study_design"
+    ],
+    "nhop_path": [
+      [
+        "https://w3id.org/CDIO/time-chf/study_design_execution",
+        "http://purl.obolibrary.org/obo/bfo.owl/concretizes",
+        "https://w3id.org/CDIO/time-chf/study_design"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/study_design",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/time-chf/protocol"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/protocol",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/time-chf/study_design_variable_specification"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+        "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+        "https://w3id.org/CDIO/time-chf/angina"
+      ]
+    ],
+    "onehop_path": [
+      "<https://w3id.org/CDIO/time-chf/angina>"
+    ]
   },
   {
     "nl": "Find count of variables related to time-chf study",
@@ -1092,7 +1155,29 @@
           "score": 0.6060872077941895
         }
       ]
-    }
+    },
+    "nhop_path": [
+      [
+        "https://w3id.org/CDIO/time-chf/study_design_execution",
+        "http://purl.obolibrary.org/obo/bfo.owl/concretizes",
+        "https://w3id.org/CDIO/time-chf/study_design"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/study_design",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/time-chf/protocol"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/protocol",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/time-chf/study_design_variable_specification"
+      ],
+      [
+        "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+        "http://purl.obolibrary.org/obo/bfo.owl#has_part",
+        "https://w3id.org/CDIO/time-chf/hr"
+      ]
+    ]
   },
   {
     "nl": "Find count of all drug related variables in time-chf",
@@ -1393,6 +1478,36 @@
           "score": 0.8064123392105103
         }
       ]
-    }
+    },
+    "multihop_path": [
+      "<https://w3id.org/CDIO/time-chf/hr>",
+      "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+      "https://w3id.org/CDIO/time-chf/%25406mwt",
+      "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+      "https://w3id.org/CDIO/time-chf/atiiadj1",
+      "https://w3id.org/CDIO/time-chf/study_design_variable_specification"
+    ],
+    "nhop_path": [
+      [
+        "https://w3id.org/CDIO/dysfunction-dm/study_design_execution",
+        "http://purl.obolibrary.org/obo/bfo.owl/concretizes",
+        "https://w3id.org/CDIO/dysfunction-dm/study_design"
+      ],
+      [
+        "https://w3id.org/CDIO/dysfunction-dm/study_design",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/dysfunction-dm/protocol"
+      ],
+      [
+        "https://w3id.org/CDIO/dysfunction-dm/protocol",
+        "http://purl.obolibrary.org/obo/bfo.owl/has_part",
+        "https://w3id.org/CDIO/dysfunction-dm/number_of_study_participants_specification"
+      ],
+      [
+        "https://w3id.org/CDIO/dysfunction-dm/number_of_study_participants_specification",
+        "http://purl.obolibrary.org/obo/bfo.owl/is_part_of",
+        "https://w3id.org/CDIO/dysfunction-dm/protocol"
+      ]
+    ]
   }
 ]
