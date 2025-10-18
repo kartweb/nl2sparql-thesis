@@ -3,6 +3,8 @@
     "nl": "Find all distinct named graphs and their Triples",
     "nl_keywords": "",
     "sparql": "SELECT ?g (COUNT(*) AS ?tripleCount)\nWHERE {\n  GRAPH ?g {\n    ?s ?p ?o .\n  }\n}\nGROUP BY ?g",
+    "prefix": "",
+    "graph": "",
     "idx": 0,
     "retrieved_terms": {},
     "retrieved_embeddings": {}
@@ -11,6 +13,8 @@
     "nl": "Find all studies of diabetes disease",
     "nl_keywords": "diabetes disease",
     "sparql": "PREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cdio: <https://w3id.org/CDIO/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?study \nWHERE {\n  GRAPH <https://w3id.org/CDIO/graph/studies> {\n    ?study a obi:study_design_execution ;\n           bfo:concretizes ?study_design .\n    ?study_design bfo:has_part ?protocol .\n\n    # Primary purpose specification\n    ?protocol bfo:has_part ?study_primary_purpose_specification .\n    ?study_primary_purpose_specification a cdio:study_primary_purpose_specification ;\n                                         cdio:has_value ?purpose .\n\n    # Inclusion criteria pattern (optional)\n    OPTIONAL {\n      ?protocol bfo:has_part ?inclusionInst .\n      ?inclusionInst a cdio:inclusion_criteria ;\n                    cdio:has_value ?inclusion .\n    }\n\n    # Filter: Only include studies where the primary purpose or inclusion criteria contain \"diabetes\"\n    FILTER( regex(lcase(str(?purpose)), 'diabetes') || (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'diabetes')) )\n  }\n}",
+    "prefix": "PREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cdio: <https://w3id.org/CDIO/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>",
+    "graph": "<https://w3id.org/CDIO/graph/studies>",
     "idx": 1,
     "retrieved_terms": {
       "diabetes": [
@@ -327,6 +331,8 @@
     "nl": "Find all studies of coronary heart disease",
     "nl_keywords": "coronary heart disease",
     "sparql": "prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nprefix cdio: <https://w3id.org/CDIO/>\nprefix dc: <http://purl.org/dc/elements/1.1/>\nprefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nprefix obi: <http://purl.obolibrary.org/obo/obi.owl/>\nprefix xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?study \nWHERE {\n  GRAPH <https://w3id.org/CDIO/graph/studies> {\n    ?study a obi:study_design_execution ;\n           bfo:concretizes ?study_design .\n    ?study_design bfo:has_part ?protocol .\n\n    # Primary purpose specification\n    ?protocol bfo:has_part ?study_primary_purpose_specification .\n    ?study_primary_purpose_specification a cdio:study_primary_purpose_specification ;\n                                         cdio:has_value ?purpose .\n\n    # Inclusion criteria pattern (optional)\n    OPTIONAL {\n      ?protocol bfo:has_part ?inclusionInst .\n      ?inclusionInst a cdio:inclusion_criteria ;\n                     cdio:has_value ?inclusion .\n    }\n\n    FILTER( regex(lcase(str(?purpose)), 'coronary heart disease') ||\n            (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'coronary heart disease')) )\n  }\n}",
+    "prefix": "prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nprefix cdio: <https://w3id.org/CDIO/>\nprefix dc: <http://purl.org/dc/elements/1.1/>\nprefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nprefix obi: <http://purl.obolibrary.org/obo/obi.owl/>\nprefix xsd: <http://www.w3.org/2001/XMLSchema#>",
+    "graph": "<https://w3id.org/CDIO/graph/studies>",
     "idx": 2,
     "retrieved_terms": {
       "coronary": [
@@ -801,6 +807,8 @@
     "nl": "Find count of variables related to time-chf study",
     "nl_keywords": "time-chf study",
     "sparql": "prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nprefix cdio: <https://w3id.org/CDIO/>\nprefix dc: <http://purl.org/dc/elements/1.1/>\nprefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nprefix obi: <http://purl.obolibrary.org/obo/obi.owl/>\nprefix xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT (COUNT(?data_element) AS ?var_count)\nWHERE {\n    GRAPH <https://w3id.org/CDIO/graph/studies>{\n         ?study a obi:study_design_execution ;\n                dc:identifier 'time-chf';\n                bfo:concretizes ?study_design.\n         ?study_design bfo:has_part ?protocol .\n         ?protocol bfo:has_part ?study_var_design.\n         ?study_var_design a cdio:study_design_variable_specification;\n                             ns1:has_part ?data_element.\n    }\n}",
+    "prefix": "prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nprefix cdio: <https://w3id.org/CDIO/>\nprefix dc: <http://purl.org/dc/elements/1.1/>\nprefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nprefix obi: <http://purl.obolibrary.org/obo/obi.owl/>\nprefix xsd: <http://www.w3.org/2001/XMLSchema#>",
+    "graph": "<https://w3id.org/CDIO/graph/studies>",
     "idx": 3,
     "retrieved_terms": {
       "time-chf": [
@@ -1183,6 +1191,8 @@
     "nl": "Find count of all drug related variables in time-chf",
     "nl_keywords": "drug time-chf",
     "sparql": "prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nprefix cdio: <https://w3id.org/CDIO/>\nprefix dc: <http://purl.org/dc/elements/1.1/>\nprefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nprefix obi: <http://purl.obolibrary.org/obo/obi.owl/>\nprefix xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT (COUNT(?data_element) AS ?var_count)\nWHERE {\n    GRAPH <https://w3id.org/CDIO/graph/studies>{\n         ?study a obi:study_design_execution ;\n                dc:identifier 'time-chf';\n                bfo:concretizes ?study_design.\n         ?study_design bfo:has_part ?protocol .\n         ?protocol bfo:has_part ?study_var_design.\n         ?study_var_design a cdio:study_design_variable_specification;\n                             ns1:has_part ?data_element.\n    }\n          \n     GRAPH <https://w3id.org/CDIO/graph/time-chf> {\n        ?data_element a cdio:data_element;\n          obi:is_specified_input_of ?catProcessA, ?stdProcessA .\n      ?catProcessA a cdio:categorization_process ;\n                    obi:has_specified_output ?cat_outputA .\n\n        ?cat_outputA cdio:has_value \"drug_exposure\".\n\n     }\n\n}",
+    "prefix": "prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nprefix cdio: <https://w3id.org/CDIO/>\nprefix dc: <http://purl.org/dc/elements/1.1/>\nprefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>\nprefix obi: <http://purl.obolibrary.org/obo/obi.owl/>\nprefix xsd: <http://www.w3.org/2001/XMLSchema#>",
+    "graph": "<https://w3id.org/CDIO/graph/studies>",
     "idx": 4,
     "retrieved_terms": {
       "drug": [],
@@ -1479,14 +1489,6 @@
         }
       ]
     },
-    "multihop_path": [
-      "<https://w3id.org/CDIO/time-chf/hr>",
-      "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
-      "https://w3id.org/CDIO/time-chf/%25406mwt",
-      "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
-      "https://w3id.org/CDIO/time-chf/atiiadj1",
-      "https://w3id.org/CDIO/time-chf/study_design_variable_specification"
-    ],
     "nhop_path": [
       [
         "https://w3id.org/CDIO/dysfunction-dm/study_design_execution",

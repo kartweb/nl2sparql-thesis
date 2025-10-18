@@ -1,36 +1,39 @@
 import pandas as pd
-from difflib import SequenceMatcher
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
 df = pd.read_excel("experiments/results/terms_vs_embs.xlsx")
 
-def fuzz_positive_overlap(reference, candidate, threshold=0.8):
+# Replace all tokens starting with '?' with a generic placeholder
+def normalize_vars(tokens):
+    return ["?var" if t.startswith("?") else t for t in tokens]
+
+def bleu(reference, candidate):
 
     if not isinstance(reference, str):
         reference = ""
     if not isinstance(candidate, str):
         candidate = ""
 
-    ref_tokens = [t for t in reference.split() if not t.startswith("?")]
-    cand_tokens = [t for t in candidate.split() if not t.startswith("?")]
-    matches = 0
-    for ref in ref_tokens:
-        for cand in cand_tokens:
-            if SequenceMatcher(None, ref, cand).ratio() >= threshold:
-                matches += 1
-                break
-    return matches / len(ref_tokens) if ref_tokens else 0
+    ref_tokens = reference.split()
+    cand_tokens = candidate.split()
 
+    # Normalize SPARQL variable names
+    ref_tokens = normalize_vars(ref_tokens)
+    cand_tokens = normalize_vars(cand_tokens)
 
-# Fuzzy recall (reward only good partial matches)
+    #Use smoothing function to avoid zero scores for short sequences, adding 1 to numerator and denominator to all n
+    smoothie = SmoothingFunction().method1
+    #Wrap references in list because BLEU allows multiple references
+    return sentence_bleu([ref_tokens], cand_tokens, smoothing_function=smoothie)
+    
 # Pandas apply method is the one that iterates through each row therefore we use the lambda function
-df["fuzzy_recall_terms"] = df.apply(lambda row: fuzz_positive_overlap(row['gold_standard'], row['with_terms']), axis=1)
-df["fuzzy_recall_embs"] = df.apply(lambda row: fuzz_positive_overlap(row['gold_standard'], row['with_embeddings']), axis=1)
-df["fuzzy_recall_onehop"] = df.apply(lambda row: fuzz_positive_overlap(row['gold_standard'], row['with_onehop']), axis=1)
-df["fuzzy_recall_onehop_terms_embs"] = df.apply(lambda row: fuzz_positive_overlap(row['gold_standard'], row['with_onehop_terms_embs']), axis=1)
-df["fuzzy_recall_nhop"] = df.apply(lambda row: fuzz_positive_overlap(row['gold_standard'], row['with_nhop']), axis=1)
-df["fuzzy_recall_nhop_terms_embs"] = df.apply(lambda row: fuzz_positive_overlap(row['gold_standard'], row['with_nhop_terms_embs']), axis=1)
+df["bleu_terms"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_terms']), axis=1)
+df["bleu_embs"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_embeddings']), axis=1)
+df["bleu_onehop"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_onehop']), axis=1)
+df["bleu_nhop"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_nhop']), axis=1)
+df["bleu_nhop_terms_embs"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_nhop_terms_embs']), axis=1)
 
-keep_cols = ["query_id", "fuzzy_recall_terms", "fuzzy_recall_embs", "fuzzy_recall_onehop", "fuzzy_recall_onehop_terms_embs", "fuzzy_recall_nhop", "fuzzy_recall_nhop_terms_embs"]
+keep_cols = ["query_id", "bleu_terms", "bleu_embs", "bleu_onehop", "bleu_nhop", "bleu_nhop_terms_embs"]
 
 df = df[[c for c in keep_cols if c in df.columns]]
 
