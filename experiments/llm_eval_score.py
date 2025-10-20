@@ -1,8 +1,6 @@
 import pandas as pd
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
-df = pd.read_excel("experiments/results/llm_eval.xlsx")
-
 def normalize_vars(tokens):
 
     prefixes = {
@@ -31,7 +29,7 @@ def normalize_vars(tokens):
         if t.startswith("<") and t.endswith(">"):
             iri = t[1:-1]
             replaced = False
-            for prefix, base in prefix.items():
+            for prefix, base in prefixes.items():
                 if iri.startswith(base):
                     short_form = prefix + ":" + iri[len(base):]
                     cleaned_tokens.append(short_form)
@@ -68,15 +66,22 @@ model_cols = [
     "Deepseek_DeepThink"
 ]
 
-for model in model_cols:
-    if model in df.columns:
-        bleu_col = f"bleu_{model}"
-        df[bleu_col] = df.apply(lambda row: bleu(row["gold_standard"], row[model]), axis=1)
+if __name__ == "__main__":
+    df = pd.read_excel("experiments/results/llm_eval.xlsx")
 
-# Keep only relevant columns
-keep_cols = ["query_id"] + [c for c in df.columns if c.startswith("bleu_")]
-df = df[[c for c in keep_cols if c in df.columns]]
+    for model in model_cols:
+        if model in df.columns:
+            bleu_col = f"bleu_{model}"
+            df[bleu_col] = df.apply(lambda row: bleu(row["gold_standard"], row[model]), axis=1)
 
-print(df)
-df.to_csv("experiments/results/llm_eval_score.csv", index=False)
-print("done")
+    # Keep only relevant columns
+    keep_cols = ["query_id"] + [c for c in df.columns if c.startswith("bleu_")]
+    df = df[[c for c in keep_cols if c in df.columns]]
+
+    avg_row = df.mean(numeric_only=True)
+    avg_row["query_id"] = "Average" 
+    df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True)
+
+    print(df)
+    df.to_csv("experiments/results/llm_eval_score.csv", index=False)
+    print("done")
