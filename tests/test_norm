@@ -1,0 +1,35 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from experiments.methods_eval_score import normalize_vars, bleu, rouge
+
+def test_normalize_vars():
+    query = """
+    prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>
+    prefix cdio: <https://w3id.org/CDIO/>
+    prefix dc: <http://purl.org/dc/elements/1.1/>
+    prefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>
+    prefix obi: <http://purl.obolibrary.org/obo/obi.owl/>
+    prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+    SELECT (COUNT(?variable) AS ?variable_count)
+    WHERE {
+    GRAPH <https://w3id.org/CDIO/graph/studies> {
+        <https://w3id.org/CDIO/time-chf/study_design_execution> bfo:concretizes <https://w3id.org/CDIO/time-chf/study_design> .
+        <https://w3id.org/CDIO/time-chf/study_design> bfo:has_part <https://w3id.org/CDIO/time-chf/protocol> .
+        <https://w3id.org/CDIO/time-chf/protocol> bfo:has_part <https://w3id.org/CDIO/time-chf/study_design_variable_specification> .
+        <https://w3id.org/CDIO/time-chf/study_design_variable_specification> ns1:has_part ?variable .
+    }
+    }
+    """
+
+    tokens = query.split()
+    normalized = " ".join(normalize_vars(tokens))
+    
+    with open("tests/test_norm.txt", "w", encoding="utf-8") as f:
+        f.write(normalized)
+    print("Saved to test_norm.txt")
+
+    
+if __name__ == "__main__":
+    test_normalize_vars()

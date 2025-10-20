@@ -1,1 +1,30 @@
-{'Find': [{'text': 'TRUE', 'score': 0.574568510055542}, {'text': 'TRUE', 'score': 0.574568510055542}, {'text': 'TRUE', 'score': 0.574568510055542}, {'text': 'TRUE', 'score': 0.574568510055542}, {'text': 'TRUE', 'score': 0.574568510055542}], 'count': [{'text': 'cycle', 'score': 0.5641216039657593}, {'text': 'dc:identifier', 'score': 0.5188979506492615}, {'text': 'dc:identifier', 'score': 0.5188979506492615}, {'text': 'dc:identifier', 'score': 0.5188979506492615}, {'text': 'dc:identifier', 'score': 0.5188979506492615}], 'variables': [{'text': '<https://w3id.org/CDIO/study_design_variable_specification>', 'score': 0.6143823862075806}, {'text': '<https://w3id.org/CDIO/study_design_variable_specification>', 'score': 0.6143823862075806}, {'text': '<https://w3id.org/CDIO/study_design_variable_specification>', 'score': 0.6143823862075806}, {'text': '<https://w3id.org/CDIO/study_design_variable_specification>', 'score': 0.6143823862075806}, {'text': '<https://w3id.org/CDIO/study_design_variable_specification>', 'score': 0.6143823862075806}], 'related': [{'text': 'TRUE', 'score': 0.5626394748687744}, {'text': 'TRUE', 'score': 0.5626394748687744}, {'text': 'TRUE', 'score': 0.5626394748687744}, {'text': 'TRUE', 'score': 0.5626394748687744}, {'text': 'TRUE', 'score': 0.5626394748687744}], 'time-chf': [{'text': 'time-chf', 'score': 0.9999999403953552}, {'text': '<https://w3id.org/CDIO/time-chf/hr>', 'score': 0.8631730675697327}, {'text': '<https://w3id.org/CDIO/time-chf/a>', 'score': 0.8457931876182556}, {'text': '<https://w3id.org/CDIO/time-chf/hct>', 'score': 0.8428274393081665}, {'text': '<https://w3id.org/CDIO/time-chf/ec>', 'score': 0.8388451337814331}], 'study': [{'text': 'observational study', 'score': 0.7328550815582275}, {'text': 'observational study', 'score': 0.7328550815582275}, {'text': 'observational study', 'score': 0.7328550815582275}, {'text': 'observational study', 'score': 0.7328550815582275}, {'text': 'observational study', 'score': 0.7328550815582275}]}
+prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>
+prefix cdio: <https://w3id.org/CDIO/>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>
+prefix obi: <http://purl.obolibrary.org/obo/obi.owl/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (COUNT(?data_element) AS ?var_count)
+WHERE {
+    GRAPH <https://w3id.org/CDIO/graph/studies>{
+         ?study a obi:study_design_execution ;
+                dc:identifier 'time-chf';
+                bfo:concretizes ?study_design.
+         ?study_design bfo:has_part ?protocol .
+         ?protocol bfo:has_part ?study_var_design.
+         ?study_var_design a cdio:study_design_variable_specification;
+                             ns1:has_part ?data_element.
+    }
+          
+     GRAPH <https://w3id.org/CDIO/graph/time-chf> {
+        ?data_element a cdio:data_element;
+          obi:is_specified_input_of ?catProcessA, ?stdProcessA .
+      ?catProcessA a cdio:categorization_process ;
+                    obi:has_specified_output ?cat_outputA .
+
+        ?cat_outputA cdio:has_value "drug_exposure".
+
+     }
+
+}

@@ -1,0 +1,60 @@
+Generate only SPARQL for NL qs using RAG when needed.
+NL "Find count of all drug related variables in time-chf"
+RAG
+#Must include prefix: prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl/>
+prefix cdio: <https://w3id.org/CDIO/>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix ns1: <http://purl.obolibrary.org/obo/bfo.owl#>
+prefix obi: <http://purl.obolibrary.org/obo/obi.owl/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+#Must include graph GRAPH (GRAPH must be under where block): <https://w3id.org/CDIO/graph/studies>
+"retrieved_terms": {
+  "drug": [],
+  "time-chf": [
+    "https://w3id.org/CDIO/time-chf/inclusion_criteria",
+    "https://w3id.org/CDIO/time-chf/inclusion_criteria",
+    "https://w3id.org/CDIO/time-chf/number_of_study_participants_specification",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/number_of_study_participants_specification",
+    "https://w3id.org/CDIO/time-chf/number_of_study_participants_specification",
+    "https://w3id.org/CDIO/time-chf/ongoing",
+    "https://w3id.org/CDIO/time-chf/ongoing",
+    "https://w3id.org/CDIO/time-chf/organization",
+    "https://w3id.org/CDIO/time-chf/study_contact_person",
+    "https://w3id.org/CDIO/time-chf/organization",
+    "https://w3id.org/CDIO/time-chf/organization",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/inclusion_criteria",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/number_of_study_participants_specification",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/outcome_specification",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/study_design_variable_specification",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/study_primary_purpose_specification",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/study_contact_email",
+    "https://w3id.org/CDIO/time-chf/study_contact_email",
+    "https://w3id.org/CDIO/time-chf/study_contact_person",
+    "https://w3id.org/CDIO/time-chf/study_contact_email",
+    "https://w3id.org/CDIO/time-chf/study_contact_person",
+    "https://w3id.org/CDIO/time-chf/study_contact_person",
+    "https://w3id.org/CDIO/time-chf/study_design",
+    "https://w3id.org/CDIO/time-chf/protocol",
+    "https://w3id.org/CDIO/time-chf/study_design",
+    "https://w3id.org/CDIO/time-chf/study_design_execution",
+    "https://w3id.org/CDIO/time-chf/study_design",
+    "https://w3id.org/CDIO/time-chf/study_design_execution",
+    "https://w3id.org/CDIO/time-chf/study_design",
+    "https://w3id.org/CDIO/time-chf/study_design_execution",
+    "https://w3id.org/CDIO/time-chf/ongoing",
+    "https://w3id.org/CDIO/time-chf/study_design_execution",
+    "https://w3id.org/CDIO/time-chf/organization",
+    "https://w3id.org/CDIO/time-chf/study_design_execution",
+    "https://w3id.org/CDIO/time-chf/study_design_execution",
+    "https://w3id.org/CDIO/time-chf/study_design_execution",
+    "time-chf"
+  ]
+},
+---
