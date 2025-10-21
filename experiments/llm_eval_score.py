@@ -1,24 +1,29 @@
 import pandas as pd
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
+import re
 
 def normalize_vars(tokens):
 
+    # Make sure they are all lowercase for matching
     prefixes = {
         "bfo": "http://purl.obolibrary.org/obo/bfo.owl/",
-        "cdio": "https://w3id.org/CDIO/",
+        "cdio": "https://w3id.org/cdio/",
         "dc": "http://purl.org/dc/elements/1.1/",
         "ns1": "http://purl.obolibrary.org/obo/bfo.owl#",
         "obi": "http://purl.obolibrary.org/obo/obi.owl/",
-        "xsd": "http://www.w3.org/2001/XMLSchema#"
+        "xsd": "http://www.w3.org/2001/xmlschema#"
     }
 
+
     cleaned_tokens = []
+    iri_pattern = re.compile(r"<([^<>]+)>") # matches anything inside <...>
     for t in tokens:
+
         # Token to lowercasee and remove extra whitespace
         t = t.lower().strip()
 
-        # Remove inline comments starting with '#'
-        if "#" in t:
+        # Remove inline comments starting with '#' that are not in uri's <>
+        if "#" in t and not re.search(r"<[^>]*#.*?>", t):
             t = t.split("#", 1)[0].strip()
         if not t:
             continue
@@ -29,19 +34,17 @@ def normalize_vars(tokens):
             continue
 
         # Normalize full IRIs to prefixed form
-        if t.startswith("<") and t.endswith(">"):
-            iri = t[1:-1]
-            replaced = False
+        def replace_iri(match):
+            iri = match.group(1) # part inside parentheses
             for prefix, base in prefixes.items():
                 if iri.startswith(base):
-                    short_form = prefix + ":" + iri[len(base):]
-                    cleaned_tokens.append(short_form)
-                    replaced = True
-                    break
-            if not replaced:
-                cleaned_tokens.append(t)
-        else:
-            cleaned_tokens.append(t)
+                    return prefix + ":" + iri[len(base):]
+            # if no prefix match return original <...>
+            return "<" + iri + ">"
+        
+        # Replace all <...> occurences in the token
+        new_t = iri_pattern.sub(replace_iri, t)
+        cleaned_tokens.append(new_t)
 
     return cleaned_tokens
 

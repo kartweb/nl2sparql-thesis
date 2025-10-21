@@ -1,6 +1,7 @@
 import pandas as pd
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import re
+
 def normalize_vars(tokens):
 
     # Make sure they are all lowercase for matching

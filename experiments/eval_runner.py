@@ -31,9 +31,9 @@ def make_prompt(entry, fields):
     return "\n".join(lines) + "\n---\n"
 
 def main():
-    idx = 4
+    idx = 1
     options = ["retrieved_terms", "retrieved_embeddings", "onehop_path", "nhop_path"]
-    fields = ["retrieved_terms"]
+    fields = ["nhop_path"]
 
     json_path = "data/nl2sparql_pairs.json"
     output_path = "experiments/results/output_eval.txt"
