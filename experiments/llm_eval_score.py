@@ -14,6 +14,9 @@ def normalize_vars(tokens):
 
     cleaned_tokens = []
     for t in tokens:
+        # Token to lowercasee and remove extra whitespace
+        t = t.lower().strip()
+
         # Remove inline comments starting with '#'
         if "#" in t:
             t = t.split("#", 1)[0].strip()
@@ -68,6 +71,18 @@ model_cols = [
 
 if __name__ == "__main__":
     df = pd.read_excel("experiments/results/llm_eval.xlsx")
+
+     # === Build a new DataFrame just for normalized text ===
+    df_clean = pd.DataFrame()
+    df_clean["query_id"] = df["query_id"]
+
+    # Normalize gold standard and all model outputs
+    for col in ["gold_standard"] + model_cols:
+        if col in df.columns:
+            df_clean[col + "_cleaned"] = df[col].apply(lambda x: " ".join(normalize_vars(str(x).split())))
+
+    # Save cleaned data to inspect normalization
+    df_clean.to_csv("experiments/results/llm_eval_output.csv", index=False)
 
     for model in model_cols:
         if model in df.columns:
