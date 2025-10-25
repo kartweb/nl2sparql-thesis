@@ -68,7 +68,9 @@ def bleu(reference, candidate):
     #Use smoothing function to avoid zero scores for short sequences, adding 1 to numerator and denominator to all n
     smoothie = SmoothingFunction().method1
     #Wrap references in list because BLEU allows multiple references
-    return sentence_bleu([ref_tokens], cand_tokens, smoothing_function=smoothie)
+    return sentence_bleu([ref_tokens], cand_tokens, smoothing_function=smoothie)    
+
+
 
 if __name__ == "__main__":
     df = pd.read_excel(r"experiments/results/methods_eval.xlsx")
@@ -101,6 +103,8 @@ if __name__ == "__main__":
     avg_row["query_id"] = "Average" # add one extra label to series
     #Forget old row indexes from both dataframes and give a new clean continuous 0-based index
     df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True) # Add series row 0 by default using concat 
+
+    df["average"] = df.mean(axis=1, numeric_only=True)
 
     print(df)
 

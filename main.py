@@ -5,7 +5,7 @@ from utils.embedder import embed_names, embed_sim
 import numpy as np
 import pandas as pd
 
-def main(current_idx=4):
+def main(current_idx=1):
     rag = RAG() 
 
     with open("data/nl2sparql_pairs.json", "r") as f:

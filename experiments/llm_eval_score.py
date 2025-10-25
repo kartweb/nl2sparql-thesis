@@ -63,13 +63,10 @@ def bleu(reference, candidate):
 model_cols = [
     "GPT-5_instant",
     "GPT-4o",
-    "MetaAI_Llama-4",
+    "Deepseek",
     "Gemini_2.5-Flash",
     "Claude_Sonnet-4.5",
     "Mistral_7B",
-    "GPT-5_thinking",
-    "Deepseek",
-    "Deepseek_DeepThink"
 ]
 
 if __name__ == "__main__":
@@ -99,6 +96,8 @@ if __name__ == "__main__":
     avg_row = df.mean(numeric_only=True)
     avg_row["query_id"] = "Average" 
     df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True)
+
+    df["average"] = df.mean(axis=1, numeric_only=True)
 
     print(df)
     df.to_csv("experiments/results/llm_eval_score.csv", index=False)

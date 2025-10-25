@@ -10,7 +10,7 @@ class RAG:
         token_lower = token.lower()
         query = f"""
         SELECT ?s ?p ?o WHERE {{ 
-            GRAPH <https://w3id.org/CDIO/graph/studies> {{
+            GRAPH <https://w3id.org/CMEO/graph/studies_metadata>{{
                 ?s ?p ?o .
                 FILTER(
                     CONTAINS( LCASE( STR(?s) ), LCASE("{token}")) ||

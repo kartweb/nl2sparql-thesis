@@ -17,7 +17,7 @@ class MultiHop:
 
         SELECT DISTINCT ?s ?p ?o
         WHERE {{
-            GRAPH <https://w3id.org/CDIO/graph/studies> {{
+            GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {{
                 {{
                     {entity_uri} ?p ?o .
                     BIND({entity_uri} AS ?s)
@@ -71,7 +71,7 @@ class MultiHop:
         ?end
         ?hops
         WHERE {{
-        GRAPH <https://w3id.org/CDIO/graph/studies> {{
+        GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {{
             # Bind the given entity (e.g., diabetes) as the fixed end target
             BIND({entity_uri} AS ?end)
 
@@ -186,4 +186,7 @@ class MultiHop:
             triples = []
         
         return triples
+    
+    
+
                     
