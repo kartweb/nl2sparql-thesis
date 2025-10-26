@@ -21,11 +21,11 @@ def save_hop_path(idx, path, hop_type="onehop"):
 
 
 if __name__ == "__main__":
-    idx = 2
-    term = "<https://w3id.org/CMEO/time-chf/angina>"
+    idx = 6
+    term = "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure"
     
     mh = MultiHop()
-    path = mh.retrieve_one_hop(term)
+    path = mh.retrieve_n_hops(term)
     
-    save_hop_path(idx, path)
+    save_hop_path(idx, path, hop_type="nhop")
     print(path)

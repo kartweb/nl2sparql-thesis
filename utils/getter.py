@@ -35,8 +35,8 @@ class Getter:
     
 if __name__ == "__main__":
     getter = Getter()
-    idx = 4
-    out = str(getter.get_sparql(idx))
+    idx = 12
+    out = str(getter.get_nl(idx))
     with open("utils/output.txt", "w",encoding="utf-8") as f:
         f.write(out)
 

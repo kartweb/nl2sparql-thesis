@@ -1,5 +1,4 @@
 import json
-import sys
 
 file_path = "data/nl2sparql_pairs.json"
 

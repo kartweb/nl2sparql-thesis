@@ -2,7 +2,8 @@ import numpy as np
 import pandas as pd
 import torch
 from tqdm.auto import tqdm
-from transformers import AutoTokenizer, AutoModel  
+from transformers import AutoTokenizer, AutoModel 
+
 
 tokenizer = AutoTokenizer.from_pretrained("cambridgeltl/SapBERT-from-PubMedBERT-fulltext")  
 model = AutoModel.from_pretrained("cambridgeltl/SapBERT-from-PubMedBERT-fulltext").cuda()

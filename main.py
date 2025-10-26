@@ -4,8 +4,12 @@ from utils.preprocessing import tokenize, remove_stop_words
 from utils.embedder import embed_names, embed_sim
 import numpy as np
 import pandas as pd
+import warnings 
+# For decoding a new paramter will be introduced regarding whether it should clean up white spaces or not when decoding
+warnings.filterwarnings("ignore", message=".*clean_up_tokenization_spaces.*")
+warnings.filterwarnings("ignore", message=".*flash attention.*")
 
-def main(current_idx=1):
+def main(current_idx=13):
     rag = RAG() 
 
     with open("data/nl2sparql_pairs.json", "r") as f:
