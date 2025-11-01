@@ -13,6 +13,7 @@ def make_prompt(entry, fields):
         "Generate only SPARQL for NL qs using RAG when needed.",
         f"NL \"{nl}\"",
         "RAG",
+        f"Shorten prefixes when possible",
         f"#Must include prefix: {prefix}",
         f"#Must include graph GRAPH (GRAPH must be under where block): {graph}"
     ]
