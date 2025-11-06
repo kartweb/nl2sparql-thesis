@@ -2,17 +2,28 @@ import pandas as pd
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import re
 
+
 def normalize_vars(tokens):
 
     # Make sure they are all lowercase for matching
     prefixes = {
-        "bfo": "http://purl.obolibrary.org/obo/bfo.owl/",
-        "cdio": "https://w3id.org/cdio/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
         "dc": "http://purl.org/dc/elements/1.1/",
-        "ns1": "http://purl.obolibrary.org/obo/bfo.owl#",
+        "bfo": "http://purl.obolibrary.org/obo/bfo.owl/",
         "obi": "http://purl.obolibrary.org/obo/obi.owl/",
-        "xsd": "http://www.w3.org/2001/xmlschema#"
+        "ro": "http://purl.obolibrary.org/obo/ro.owl/",
+        "iao": "http://purl.obolibrary.org/obo/iao.owl/",
+        "sio": "http://semanticscience.org/ontology/sio.owl/",
+        "duo": "http://purl.obolibrary.org/obo/duo/",
+        "obcs": "http://purl.obolibrary.org/obo/obcs.owl/",
+        "stato": "http://purl.obolibrary.org/obo/stato.owl/",
+        "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+        "cd": "http://citydata.wu.ac.at/ns#",
+        "cmeo": "https://w3id.org/cmeo/"
     }
+
 
 
     cleaned_tokens = []
@@ -21,6 +32,7 @@ def normalize_vars(tokens):
 
         # Token to lowercasee and remove extra whitespace
         t = t.lower().strip()
+        
 
         # Remove inline comments starting with '#' that are not in uri's <>
         if "#" in t and not re.search(r"<[^>]*#.*?>", t):
@@ -48,9 +60,6 @@ def normalize_vars(tokens):
 
     return cleaned_tokens
 
-# Bleu scores measure precision foucusing on how much generated text
-# matches the reference text in terms of word order and structure
-# making it good for machine translation
 def bleu(reference, candidate):
 
     if not isinstance(reference, str):
@@ -70,42 +79,39 @@ def bleu(reference, candidate):
     #Wrap references in list because BLEU allows multiple references
     return sentence_bleu([ref_tokens], cand_tokens, smoothing_function=smoothie)    
 
+cols = [
+    "no_schema",
+    "schema_predicates",
+    "schema_concise",
+    "schema_objects",
+    "schema_instances"
+]
 
 
 if __name__ == "__main__":
-    df = pd.read_excel(r"experiments/results/methods_eval.xlsx")
-    
-    # === Build a new DataFrame just for normalized text ===
+    df = pd.read_excel(r"C:\Users\32472\Desktop\MaastrichtUni\Year3\ThesisSep\CodeDataFinal\nl2sparql-thesis\experiments\results\schema_experiments.xlsx")
+
+     # === Build a new DataFrame just for normalized text ===
     df_clean = pd.DataFrame()
     df_clean["query_id"] = df["query_id"]
 
-    # Apply normalization to each relevant column
-    for col in ["gold_standard", "with_terms", "with_embeddings", "with_nhop"]:
+    # Normalize gold standard and all model outputs
+    for col in ["gold_standard"] + cols:
         if col in df.columns:
             df_clean[col + "_cleaned"] = df[col].apply(lambda x: " ".join(normalize_vars(str(x).split())))
 
-    # Save only cleaned data for inspection
-    df_clean.to_csv("experiments/results/methods_eval_output.csv", index=False)
-    
-    
-    # Pandas apply method is the one that iterates through each row therefore we use the lambda function
-    df["bleu_terms"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_terms']), axis=1)
-    df["bleu_embs"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_embeddings']), axis=1)
-    df["bleu_nhop"] = df.apply(lambda row: bleu(row['gold_standard'], row['with_nhop']), axis=1)
+    # Save cleaned data to inspect normalization
+    df_clean.to_csv("experiments/results/schema_experiments_output.csv", index=False)
 
+    for col in cols:
+        if col in df.columns:
+            bleu_col = f"bleu_{col}"
+            df[bleu_col] = df.apply(lambda row: bleu(row["gold_standard"], row[col]), axis=1)
 
-    keep_cols = ["query_id", "bleu_terms", "bleu_embs", "bleu_nhop"]
+    # Keep only relevant columns
+    keep_cols = ["query_id"] + [c for c in df.columns if c.startswith("bleu_")]
     df = df[[c for c in keep_cols if c in df.columns]]
 
-    avg_row = df.mean(numeric_only=True) #computes average of each numeric column and returns series
-    avg_row["query_id"] = "Average" # add one extra label to series
-    #Forget old row indexes from both dataframes and give a new clean continuous 0-based index
-    df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True) # Add series row 0 by default using concat 
-
-    df["average"] = df.mean(axis=1, numeric_only=True)
-
     print(df)
-
-    df.to_csv("experiments/results/methods_eval_score.csv", index=False)
-
-    print('done')
+    df.to_csv("experiments/results/schema_experiments_score.csv", index=False)
+    print("done")

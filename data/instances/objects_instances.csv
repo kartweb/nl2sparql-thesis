@@ -1,0 +1,10 @@
+
+<http://purl.obolibrary.org/obo/obi.owl/age_group_inclusion_criterion>,<https://w3id.org/CMEO/aachenhf/age_group_inclusion_criterion>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/eligibility_criterion>,<https://w3id.org/CMEO/aachenhf/eligibility_criterion>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/health_status_inclusion_criterion>,<https://w3id.org/CMEO/bigfoot/health_status_inclusion_criterion>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/inclusion_criterion>,<https://w3id.org/CMEO/aachenhf/inclusion_criterion>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/maximum_age_value_specification>,<https://w3id.org/CMEO/aachenhf/age_group_inclusion_criterion/maximum_age_value_specification>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/minimum_age_value_specification>,<https://w3id.org/CMEO/aachenhf/age_group_inclusion_criterion/minimum_age_value_specification>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/objective_specification>,<https://w3id.org/CMEO/believe/objective_specification>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/population>,<https://w3id.org/CMEO/aachenhf/input_population>,rdf:type
+<http://purl.obolibrary.org/obo/obi.owl/protocol>,<https://w3id.org/CMEO/aachenhf/observational_design/protocol>,rdf:type

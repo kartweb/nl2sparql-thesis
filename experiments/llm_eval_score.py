@@ -62,11 +62,7 @@ def bleu(reference, candidate):
 
 model_cols = [
     "GPT-5_instant",
-    "GPT-4o",
-    "Deepseek",
-    "Gemini_2.5-Flash",
-    "Claude_Sonnet-4.5",
-    "Mistral_7B",
+    "Mistral_7B"
 ]
 
 if __name__ == "__main__":
