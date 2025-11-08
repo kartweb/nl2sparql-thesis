@@ -1,7 +1,7 @@
 import pandas as pd
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import re
-
+import os
 
 def normalize_vars(tokens):
 
@@ -77,49 +77,87 @@ def bleu(reference, candidate):
     #Use smoothing function to avoid zero scores for short sequences, adding 1 to numerator and denominator to all n
     smoothie = SmoothingFunction().method1
     #Wrap references in list because BLEU allows multiple references
-    return sentence_bleu([ref_tokens], cand_tokens, smoothing_function=smoothie)    
+    return sentence_bleu([ref_tokens], cand_tokens, smoothing_function=smoothie) 
 
-cols = [
-    "no_schema",
-    "schema_p",
-    "schema_p_filtered",
-    "schema_po_filtered",
-    "schema_poi_filtered",
-    "schema_poi_filtered_improved_prompt"
-]
-
-
-if __name__ == "__main__":
-    df = pd.read_excel(r"C:\Users\32472\Desktop\MaastrichtUni\Year3\ThesisSep\CodeDataFinal\nl2sparql-thesis\experiments\results\schema_experiments.xlsx")
-
-     # === Build a new DataFrame just for normalized text ===
+def run_eval(input_excel, cols, output_prefix):
+    df = pd.read_excel(input_excel)
+    
+    # === Build a new DataFrame just for normalized text ===
     df_clean = pd.DataFrame()
     df_clean["query_id"] = df["query_id"]
 
-    # Normalize gold standard and all model outputs
+    # Apply normalization to each relevant column
     for col in ["gold_standard"] + cols:
         if col in df.columns:
             df_clean[col + "_cleaned"] = df[col].apply(lambda x: " ".join(normalize_vars(str(x).split())))
 
-    # Save cleaned data to inspect normalization
-    df_clean.to_csv("experiments/results/schema_experiments_output.csv", index=False)
-
+    # Save only cleaned data for inspection
+    df_clean.to_csv(f"experiments/results/{output_prefix}_output.csv", index=False)
+    
+    # Compute BLEU for each provided column
     for col in cols:
         if col in df.columns:
-            bleu_col = f"bleu_{col}"
-            df[bleu_col] = df.apply(lambda row: bleu(row["gold_standard"], row[col]), axis=1)
+            df[f"bleu_{col}"] = df.apply(lambda row: bleu(row["gold_standard"], row[col]), axis=1)
 
-    # Keep only relevant columns
-    keep_cols = ["query_id"] + [c for c in df.columns if c.startswith("bleu_")]
+    keep_cols = ["query_id"] + [f"bleu_{c}" for c in cols]
     df = df[[c for c in keep_cols if c in df.columns]]
 
-    avg_row = df.mean(numeric_only=True) #computes average of each numeric column and returns series
-    avg_row["query_id"] = "Average" # add one extra label to series
-    #Forget old row indexes from both dataframes and give a new clean continuous 0-based index
-    df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True) # Add series row 0 by default using concat 
-
-    df["average"] = df.mean(axis=1, numeric_only=True)
-
+    avg_row = df.mean(numeric_only=True)
+    avg_row["query_id"] = "Average"
+    df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True)
+    
     print(df)
-    df.to_csv("experiments/results/schema_experiments_score.csv", index=False)
+    df.to_csv(f"experiments/results/{output_prefix}_score.csv", index=False)
     print("done")
+
+if __name__ == "__main__":
+    # Methods Eval
+    run_eval(
+        input_excel="experiments/results/methods_eval.xlsx",
+        cols=[
+            "with_terms",
+            "with_embeddings",
+            "with_nhop"
+        ],
+        output_prefix="methods_eval"
+    )
+
+    # Fewshot Eval
+    run_eval(
+        input_excel="experiments/results/fewshot_eval.xlsx",
+        cols = [
+            "0shot",
+            "1shot",
+            "2shot",
+            "3shot",
+            "4shot"
+        ],
+        output_prefix="fewshot_eval"
+    )
+
+    # Schema Eval
+    run_eval(
+        input_excel="experiments/results/schema_eval.xlsx",
+        cols=[
+            "no_schema",
+            "schema_p",
+            "schema_p_filtered",
+            "schema_po_filtered",
+            "schema_poi_filtered",
+            "schema_poi_filtered_improved_prompt"
+        ],
+        output_prefix="schema_eval"
+    )
+
+    # LLM eval
+    run_eval(
+        input_excel="experiments/results/llm_eval.xlsx",
+        cols = [
+            "GPT-5_instant",
+            "Mistral_7B"
+        ],
+        output_prefix="llm_eval"
+    )
+
+    print("\n✅ All evaluations completed successfully!")
+    

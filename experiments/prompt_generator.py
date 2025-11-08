@@ -1,6 +1,3 @@
-#Must include prefix: 
-#Must include graph name: 
-
 import json
 import os
 def make_prompt(entry, fields):
@@ -37,7 +34,7 @@ def main():
     fields = ["nhop_path"]
 
     json_path = "data/nl2sparql_pairs.json"
-    output_path = "experiments/results/output_eval.txt"
+    output_path = "experiments/results/generated_prompt.txt"
 
     # Load JSON
     if not os.path.exists(json_path):
