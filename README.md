@@ -12,13 +12,16 @@ To install dependencies, run:
 
 ```bash
 pip install -r requirements.txt
+If you want to use a virtual environment (recommended), set it up before installing:
 
-If you want to use a virtual environment (recommended):
-
+bash
+Copy code
 python -m venv venv
 source venv/bin/activate      # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
+📁 Directory Overview
+graphql
+Copy code
 NL2SPARQL-THESIS/
 │
 ├── data/                        # Datasets, schema files, and sample inputs
@@ -51,4 +54,3 @@ NL2SPARQL-THESIS/
 ├── main.py                      # Entry point for running experiments
 ├── requirements.txt             # Python dependencies
 └── .gitignore                   # Git ignore rules
-
