@@ -109,6 +109,13 @@ if __name__ == "__main__":
     keep_cols = ["query_id"] + [c for c in df.columns if c.startswith("bleu_")]
     df = df[[c for c in keep_cols if c in df.columns]]
 
+    avg_row = df.mean(numeric_only=True) #computes average of each numeric column and returns series
+    avg_row["query_id"] = "Average" # add one extra label to series
+    #Forget old row indexes from both dataframes and give a new clean continuous 0-based index
+    df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True) # Add series row 0 by default using concat 
+
+    df["average"] = df.mean(axis=1, numeric_only=True)
+    
     print(df)
     df.to_csv("experiments/results/fewshot_experiments_score.csv", index=False)
     print("done")

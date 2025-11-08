@@ -1,6 +1,5 @@
 Generate only SPARQL for NL qs using RAG when needed.
-NL  :   What are the protocol specifications of the randomized controlled trials?
-#Must include prefix:
+NL  :  What are the protocol specifications of the randomized controlled trials?
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -22,8 +21,7 @@ Use shorthand versions of prefix in query
 
 #Must include graph GRAPH (GRAPH must be under where block): <https://w3id.org/CMEO/graph/studies_metadata>
 
-RAG
-                         
+RAG                         
 Schema of predicates list you can use:
 
 <http://purl.obolibrary.org/obo/iao.owl/is_about>
