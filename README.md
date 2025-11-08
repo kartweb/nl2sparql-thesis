@@ -75,6 +75,7 @@ Default fields kept:
 You can modify the list inside the script to control which fields are preserved:
 ```python
 {k: item[k] for k in ("nl", "nl_keywords", "sparql", "graph", "prefix") if k in item}
+```
 
 #### 📘 Getter
 
