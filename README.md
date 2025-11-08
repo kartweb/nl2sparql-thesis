@@ -6,48 +6,35 @@ It implements and compares different strategies — including **Retrieval-Augmen
 ---
 
 ## ⚙️ Installation Requirements
-
-Before running the project, make sure you have **Python 3.10+** installed.  
+  
 To install dependencies, run:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 📁 Directory Overview
+## Usage
 
-NL2SPARQL-THESIS/
-│
-├── data/                        # Datasets, schema files, and sample inputs
-│
-├── experiments/
-│   ├── results/                 # Stores experiment results and evaluation outputs
-│   │   └── eval_score.py        # Script to compute evaluation metrics (accuracy, BLEU, etc.)
-│   │
-│   ├── prompt_generator.py      # Builds prompts dynamically for LLM-based SPARQL generation
-│   │
-│   └── methods/                 # Core experimental methods and algorithms
-│       ├── embeddings.py        # Embedding utilities for retrieval and similarity search
-│       ├── fewshot.py           # Few-shot prompting and inference experiments
-│       ├── multihop.py          # Multi-hop reasoning experiments
-│       ├── rag.py               # Retrieval-Augmented Generation pipeline
-│       └── schema_feeding.py    # Schema-aware SPARQL generation approach
-│
-├── unit-tests/                  # Unit test scripts for validation
-│   ├── unit-test_norm           # Normalization and text preprocessing tests
-│   └── unit-test_rag            # Tests for the RAG pipeline
-│
-├── utils/                       # Utility functions shared across modules
-│   ├── clear_dict.py            # Helper script for cleaning JSON/dictionary outputs
-│   ├── embedder/                # Embedding model utilities
-│   ├── getter.py                # Data fetching and retrieval helpers
-│   ├── preprocessing.py         # Text preprocessing (tokenization, cleaning)
-│   └── output.txt               # Temporary or debug output file
-│
-├── nhop.py                      # Multi-hop question reasoning and evaluation
-├── main.py                      # Entry point for running experiments
-├── requirements.txt             # Python dependencies
-└── .gitignore                   # Git ignore rules
+Below are the main scripts you can run for different components of the project.
+
+### Text match and Embeddings pipeline
+
+Replace `current_idx` in `main(current_idx=13)` with the index (`idx`) of the pair you want from `data/nl2sparql_pairs.json`. Then run main()
+
+### Nhop pipeline
+
+
+This script performs **multi-hop (or one-hop)** relation retrieval starting from a given ontology term.
+
+**Steps:**
+1. Set the `idx` — the index of the example from `data/nl2sparql_pairs.json`.
+2. Set the `term` — the ontology term to start the hop chaining from.
+3. Choose the retrieval method:
+   - `mh.retrieve_one_hop(term)` for one-hop relations
+   - `mh.retrieve_n_hops(term)` for n-hop relations
+4. The retrieved path is automatically saved back into the same JSON file via `save_hop_path()`:
+   - `hop_type="onehop"` (default)  
+   - `hop_type="nhop"` for multi-hop chains
 
 ## Ethics statement
 
