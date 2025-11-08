@@ -54,11 +54,6 @@ Evaluates generated SPARQL queries using **BLEU scores** across multiple experim
 This script automatically normalizes SPARQL variables and IRIs, computes BLEU scores for each experiment column, and saves both cleaned text and score results.
 
 You can also modify the given cols list for the experiments or add totally new experiments into main for evaluation.
----
-
-**Run:**
-```bash
-python experiments/eval_score.py
 
 
 ### 🧩 Utils
