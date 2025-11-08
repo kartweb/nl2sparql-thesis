@@ -23,7 +23,6 @@ Replace `current_idx` in `main(current_idx=13)` with the index (`idx`) of the pa
 
 ### Nhop pipeline
 
-
 This script performs **multi-hop (or one-hop)** relation retrieval starting from a given ontology term.
 
 **Steps:**
@@ -35,6 +34,66 @@ This script performs **multi-hop (or one-hop)** relation retrieval starting from
 4. The retrieved path is automatically saved back into the same JSON file via `save_hop_path()`:
    - `hop_type="onehop"` (default)  
    - `hop_type="nhop"` for multi-hop chains
+
+### 🧾 prompt_generator
+
+Generates a **text prompt** for SPARQL generation using a selected entry from `data/nl2sparql_pairs.json`.
+
+You can specify:
+- `idx` → which entry to use (matches the `idx` in the dataset)  
+- `fields` → which optional fields to include in the prompt  
+  (choose from `retrieved_terms`, `retrieved_embeddings`, `onehop_path`, or `nhop_path`)
+
+The generated prompt is saved to:
+experiments/results/generated_prompt.txt
+
+### 📊 Eval Score
+
+Evaluates generated SPARQL queries using **BLEU scores** across multiple experiment files.
+
+This script automatically normalizes SPARQL variables and IRIs, computes BLEU scores for each experiment column, and saves both cleaned text and score results.
+
+You can also modify the given cols list for the experiments or add totally new experiments into main for evaluation.
+---
+
+**Run:**
+```bash
+python experiments/eval_score.py
+
+
+### 🧩 Utils
+
+This folder contains small helper scripts for working with the `data/nl2sparql_pairs.json` dataset.
+
+---
+
+#### 🧹 Clean Data (`clean_pairs.py`)
+Cleans the dataset by **keeping only selected fields** and removing the rest.
+
+Default fields kept:
+- `nl`
+- `nl_keywords`
+- `sparql`
+- `graph`
+- `prefix`
+
+You can modify the list inside the script to control which fields are preserved:
+```python
+{k: item[k] for k in ("nl", "nl_keywords", "sparql", "graph", "prefix") if k in item}
+
+#### 📘 Getter
+
+A lightweight utility for **retrieving entries or specific fields** from `data/nl2sparql_pairs.json`.
+
+**Functions:**
+- `get_entry(idx)` → returns the full entry with the given index  
+- `get_nl(idx)` → returns the natural language question  
+- `get_sparql(idx)` → returns the corresponding SPARQL query  
+- `get_terms(idx)` → returns retrieved terms (if available)  
+- `get_embeddings(idx)` → returns retrieved embeddings (if available)
+
+
+
 
 ## Ethics statement
 
