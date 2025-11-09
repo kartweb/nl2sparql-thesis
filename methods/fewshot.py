@@ -2,7 +2,7 @@ import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-with open(r"C:\Users\32472\Desktop\MaastrichtUni\Year3\ThesisSep\CodeDataFinal\nl2sparql-thesis\data\nl2sparql_pairs.json", "r") as f:
+with open("data/nl2sparql_pairs.json", "r") as f:
     pairs = json.load(f)
 
 cand_pool = [4, 5, 6, 7, 12]

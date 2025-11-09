@@ -1,7 +1,8 @@
 # Preprocess OWL into simple schema representation
 from owlready2 import get_ontology, Thing
+import os
 
-path = r"C:\Users\32472\Desktop\MaastrichtUni\Year3\ThesisSep\CodeDataFinal\kg-data\Updated Knowledge Base\cmeo-core.owl"
+path = "../kg-data/Updated Knowledge Base/cmeo-core.owl"
 onto = get_ontology(path).load()
 
 def print_subclasses(cls, indent=2):
