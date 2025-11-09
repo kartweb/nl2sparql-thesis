@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings("ignore", message=".*clean_up_tokenization_spaces.*")
 warnings.filterwarnings("ignore", message=".*flash attention.*")
 
-def main(current_idx=13):
+def main(current_idx=12):
     rag = RAG() 
 
     with open("data/nl2sparql_pairs.json", "r") as f:

@@ -47,6 +47,9 @@ You can specify:
 The generated prompt is saved to:
 experiments/results/generated_prompt.txt
 
+See the improved and revised prompt template containing
+two templates (zero-shot and few-shot) ready to use in:
+data/revised_prompt_nl_sparql.pdf
 ### 📊 Eval Score
 
 Evaluates generated SPARQL queries using **BLEU scores** across multiple experiment files.

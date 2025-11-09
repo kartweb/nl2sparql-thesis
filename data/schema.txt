@@ -22,63 +22,6 @@ Use shorthand versions of prefix in query
 #Must include graph GRAPH (GRAPH must be under where block): <https://w3id.org/CMEO/graph/studies_metadata>
 
 RAG                         
-Schema of predicates list you can use:
-
-<http://purl.obolibrary.org/obo/iao.owl/is_about>
-<http://purl.obolibrary.org/obo/obi.owl/has_member>
-<http://purl.obolibrary.org/obo/ro.owl/concretizes>
-<http://purl.obolibrary.org/obo/ro.owl/has_input>
-<http://purl.obolibrary.org/obo/ro.owl/has_output>
-<http://purl.obolibrary.org/obo/ro.owl/has_part>
-<http://purl.obolibrary.org/obo/ro.owl/has_participant>
-<http://purl.obolibrary.org/obo/ro.owl/has_role>
-<http://purl.obolibrary.org/obo/ro.owl/is_characteristic_of>
-<http://purl.obolibrary.org/obo/ro.owl/is_concretized_by>
-<http://purl.obolibrary.org/obo/ro.owl/is_part_of>
-<http://purl.obolibrary.org/obo/ro.owl/part_of>
-<https://w3id.org/CMEO/has_value>
-<http://purl.obolibrary.org/obo/ro.owl/has_characteristic>
-
-dc:identifier
-
-rdf:type (a is how it is used as a shorthand in this case)
-rdfs:label
-
-Schema of Objects following rdf:type (a):
-
-cmeo:randomized_controlled_trial
-obi:protocol
-obi:objective_specification
-obi:eligibility_criterion
-obi:inclusion_criterion
-obi:health_status_inclusion_criterion
-obi:age_group_inclusion_criterion
-obi:minimum_age_value_specification
-obi:maximum_age_value_specification
-cmeo:intervention_specification
-cmeo:comparator_specification
-cmeo:outcome_specification
-obi:population
-cmeo:data_element
-cmeo:missing_value_specification
-cmeo:binary_class_variable
-cmeo:multi_class_variable
-iao:dataset
-cmeo:exploratory_data_analysis
-stato:statistic
-obcs:frequency_distribution
-cmeo:data_standardization
-cmeo:code
-cmeo:omop_id
-cmeo:categorization_process
-cmeo:visit_measurement_datum
-obcs:data_collection
-cmeo:wearable_device
-cmeo:data_use_permission_assignment
-obi:study_design_execution
-duo:data_use_permission
-duo:data_use_modifier
-
 
 
 Datatype properties:
@@ -87,9 +30,6 @@ Datatype properties:
 
 Instances:
 
-Predicate instances:
-
-Handpicked instances predicates
 ro:has_part:     <https://w3id.org/CMEO/alohas/study_design_execution> a obi:study_design_execution ;
 dc:identifier:          dc:identifier "alohas"^^xsd:string ;
 cmeo:has_value:         cmeo:has_value "nan"^^xsd:string .
@@ -154,38 +94,7 @@ cmeo:outcome_specification:  <https://w3id.org/CMEO/gissi-hf/outcome_specificati
         ro:has_part <https://w3id.org/CMEO/gissi-hf/primary_outcome_specification>,
             <https://w3id.org/CMEO/gissi-hf/secondary_outcome_specification> .
 
-No instances I gave but assume they exist 
-cmeo:missing_value_specification: 
-cmeo:data_element: 
-cmeo:binary_class_variable: 
-cmeo:multi_class_variable: 
-cmeo:exploratory_data_analysis: 
-stato:statistic: 
-obcs:frequency_distribution: 
-cmeo:data_standardization: 
-cmeo:categorization_process: 
-cmeo:visit_measurement_datum: 
-obcs:data_collection: 
-cmeo:wearable_device: 
-iao:dataset: 
-cmeo:data_use_permission_assignment: 
-obi:study_design_execution: 
-duo:data_use_permission: 
-duo:data_use_modifier: 
-cmeo:omop_id: 
 
-rdf type exampes
-
-<https://w3id.org/CMEO/aachenhf/age_group_inclusion_criterion> rdf:type <http://purl.obolibrary.org/obo/obi.owl/age_group_inclusion_criterion> .
-<https://w3id.org/CMEO/aachenhf/eligibility_criterion> rdf:type <http://purl.obolibrary.org/obo/obi.owl/eligibility_criterion> .
-<https://w3id.org/CMEO/bigfoot/health_status_inclusion_criterion> rdf:type <http://purl.obolibrary.org/obo/obi.owl/health_status_inclusion_criterion> .
-<https://w3id.org/CMEO/aachenhf/inclusion_criterion> rdf:type <http://purl.obolibrary.org/obo/obi.owl/inclusion_criterion> .
-<https://w3id.org/CMEO/aachenhf/age_group_inclusion_criterion/maximum_age_value_specification> rdf:type <http://purl.obolibrary.org/obo/obi.owl/maximum_age_value_specification> .
-<https://w3id.org/CMEO/aachenhf/age_group_inclusion_criterion/minimum_age_value_specification> rdf:type <http://purl.obolibrary.org/obo/obi.owl/minimum_age_value_specification> .
-<https://w3id.org/CMEO/believe/objective_specification> rdf:type <http://purl.obolibrary.org/obo/obi.owl/objective_specification> .
-<https://w3id.org/CMEO/aachenhf/outcome_specification> rdf:type <http://purl.obolibrary.org/obo/obi.owl/outcome_specification> .
-<https://w3id.org/CMEO/aachenhf/protocol> rdf:type <http://purl.obolibrary.org/obo/obi.owl/protocol> .
-<https://w3id.org/CMEO/aachenhf/eligibility_criterion/inclusion_criterion> rdf:type <http://purl.obolibrary.org/obo/obi.owl/inclusion_criterion> .
 
 
 
