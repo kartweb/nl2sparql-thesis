@@ -1,20 +1,17 @@
 [
   {
-    "nl": "Find all distinct named graphs and their Triples",
-    "nl_keywords": "",
-    "sparql": "SELECT ?g (COUNT(*) AS ?tripleCount)\nWHERE {\n  GRAPH ?g {\n    ?s ?p ?o .\n  }\n}\nGROUP BY ?g",
-    "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
-    "prefix": "",
-    "idx": 0
-  },
-  {
+    "idx": 0,
     "nl": "Find all studies of diabetes disease",
-    "nl_keywords": "diabetes disease",
+    "nl_keywords": "studies diabetes disease",
     "sparql": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nSELECT DISTINCT ?study_name ?purpose ?inclusion\nWHERE {\n    GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n         ?study a obi:study_design_execution ;\n                dc:identifier ?study_name;\n                ro:concretizes ?study_design.\n          ?study_design  ro:has_part ?protocol .\n\n         # Primary purpose specification\n         ?protocol ro:has_part ?purposeInst .\n         ?purposeInst a obi:objective_specification ;\n                      cmeo:has_value ?purpose .\n\n         # Inclusion criteria pattern (optional)\n         OPTIONAL {\n            ?protocol ro:has_part ?inclusionInst .\n            ?inclusionInst a obi:inclusion_criterion ;\n                           cmeo:has_value ?inclusion .\n         }\n         \n         # Filter: Only include studies where the primary purpose or inclusion criteria contain \"diabetes\"\n         FILTER( regex(lcase(str(?purpose)), 'diabetes') ||\n           (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'diabetes'))\n         )\n    }\n}",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
     "prefix": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n",
-    "idx": 1,
+    "nhop_terms": "(diabetes, http://purl.obolibrary.org/obo/obi.owl/objective_specification), (diabetes, http://purl.obolibrary.org/obo/obi.owl/inclusion_criterion)",
     "retrieved_terms": {
+      "studies": [
+        "the study includes substudies aimed at evaluating the mechanisms underlying atrial fibrillation (af) recurrence. one substudy focuses on left atrial remodeling, assessing the effect of valsartan on left atrial dimensions using echocardiography. this investigation is based on the hypothesis that valsartan may counteract structural remodeling, such as atrial dilation or fibrosis, which contributes to the onset and maintenance of af. another substudy examines neurohormonal modulation, involving the measurement of key neurohormones including brain natriuretic peptide (bnp), norepinephrine, and aldosterone. these biomarkers serve as indicators of neurohormonal activation, a physiological response commonly observed in patients with af and associated cardiovascular comorbidities.",
+        "to elucidate the complex underlying pathophysiology of t2dm and the interaction with other chronic diseases. this requires not only a large population-based subset of t2dm patients, but also a population-based cohort of individuals without t2dm and individuals at high risk to develop t2dm. such studies are currently not available and the maastricht study intends to fill this gap. it aims to identify determinants of the development and progression of (a) t2dm; (b) its classic complications (cardiovascular disease, retinopathy, neuropathy and nephropathy); and (c) its emerging comorbidities, such as cognitive decline, depression, and gastrointestinal, musculoskeletal and respiratory diseases."
+      ],
       "diabetes": [
         "http://purl.obolibrary.org/obo/obi.owl/at_risk_for_type_2_diabetes_mellitus",
         "http://purl.obolibrary.org/obo/obi.owl/at_risk_for_type_2_diabetes_mellitus",
@@ -99,6 +96,128 @@
       ]
     },
     "retrieved_embeddings": {
+      "studies": [
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        }
+      ],
       "diabetes": [
         {
           "text": "diabetes",
@@ -343,49 +462,642 @@
           "score": 0.46139317750930786
         }
       ]
-    },
-    "nhop_path": [
-      [
-        "https://w3id.org/CMEO/aachenhf/ongoing",
-        "http://purl.obolibrary.org/obo/iao.owl/is_about",
-        "https://w3id.org/CMEO/aachenhf/study_design_execution"
-      ],
-      [
-        "https://w3id.org/CMEO/aachenhf/study_design_execution",
-        "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-        "https://w3id.org/CMEO/aachenhf/observational_design"
-      ],
-      [
-        "https://w3id.org/CMEO/aachenhf/observational_design",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/aachenhf/observational_design/protocol"
-      ],
-      [
-        "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification"
-      ],
-      [
-        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/aachenhf/diabetes"
-      ]
-    ],
-    "onehop_path": [
-      [
-        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/aachenhf/diabetes"
-      ]
-    ]
+    }
   },
   {
+    "idx": 1,
+    "nl": "Find all studies of coronary heart disease",
+    "nl_keywords": "studies coronary heart disease",
+    "sparql": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nSELECT DISTINCT ?study_name ?purpose ?inclusion\nWHERE {\n    GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n         ?study a obi:study_design_execution ;\n                dc:identifier ?study_name;\n                ro:concretizes ?study_design.\n          ?study_design  ro:has_part ?protocol .\n\n         # Primary purpose specification\n         ?protocol ro:has_part ?purposeInst .\n         ?purposeInst a obi:objective_specification ;\n                      cmeo:has_value ?purpose .\n\n         # Inclusion criteria pattern (optional)\n         OPTIONAL {\n            ?protocol ro:has_part ?inclusionInst .\n            ?inclusionInst a obi:inclusion_criterion ;\n                           cmeo:has_value ?inclusion .\n         }\n         \n         # Filter: Only include studies where the primary purpose or inclusion criteria contain \"coronary heart disease\"\n         FILTER( regex(lcase(str(?purpose)), 'coronary heart disease') ||\n           (BOUND(?inclusion) && regex(lcase(str(?inclusion)), 'coronary heart disease'))\n         )\n    }\n}",
+    "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
+    "prefix": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n",
+    "retrieved_terms": {
+      "studies": [
+        "the study includes substudies aimed at evaluating the mechanisms underlying atrial fibrillation (af) recurrence. one substudy focuses on left atrial remodeling, assessing the effect of valsartan on left atrial dimensions using echocardiography. this investigation is based on the hypothesis that valsartan may counteract structural remodeling, such as atrial dilation or fibrosis, which contributes to the onset and maintenance of af. another substudy examines neurohormonal modulation, involving the measurement of key neurohormones including brain natriuretic peptide (bnp), norepinephrine, and aldosterone. these biomarkers serve as indicators of neurohormonal activation, a physiological response commonly observed in patients with af and associated cardiovascular comorbidities.",
+        "to elucidate the complex underlying pathophysiology of t2dm and the interaction with other chronic diseases. this requires not only a large population-based subset of t2dm patients, but also a population-based cohort of individuals without t2dm and individuals at high risk to develop t2dm. such studies are currently not available and the maastricht study intends to fill this gap. it aims to identify determinants of the development and progression of (a) t2dm; (b) its classic complications (cardiovascular disease, retinopathy, neuropathy and nephropathy); and (c) its emerging comorbidities, such as cognitive decline, depression, and gastrointestinal, musculoskeletal and respiratory diseases."
+      ],
+      "coronary": [
+        "length of time to non-cardiac death (time to total mortality, time to non-fatal heart attack, time to non-fatal acute coronary syndrome,time to survived sudden cardiac death, time to non-fatal end stage renal failure, how long it takes to develop non-steroidal diabetes in patients with pre-diabetes, time taken to develop non-steroidal diabetes in patients with normoglycemia, time taken to develop non-steroidal pre-diabetes in patients with normoglycemia, time taken to develop hfref in patients with heart failure with mildly reduced ejection fraction (hfmref), time taken to develop)",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "coronary artery disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "coronary artery disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "coronary heart disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "coronary heart disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "patients with concomitant pulmonary disease, even if severe, valvular disease, acute coronary syndrome or stroke, could be included when the primary diagnosis for admission to hospital or outpatient clinic visit was heart failure, rather than the concomitant condition.",
+        "patients with concomitant pulmonary disease, even if severe, valvular disease, acute coronary syndrome or stroke, could be included when the primary diagnosis for admission to hospital or outpatient clinic visit was heart failure, rather than the concomitant condition.",
+        "or percutaneous coronary intervention. the absence of a coronary artery disease was diagnosed with either an absence of coronary stenosis \u2265 50% or a coronary artery calcium score (cac) of below 100 on a cardiac ct scan or a coronary angiography with a normal fractional flow reserve (ffr >0.80), 48 months prior to inclusion.",
+        "previous coronary artery bypass graft",
+        "coronary anatomy not suitable for pci",
+        "coronary anatomy not suitable for pci",
+        "coronary arthery disease",
+        "suspected coronary artery disease",
+        "this study aims to validate if the gyroscope and accelerometer derived parameters can identify patients with hemodynamically significant cad in combined contrast ct coronary angiography and pet perfusion imaging in combination of high-sensitive troponin testing. we hypothesize that change and details in cardiac cycle and cardiac contractility is measurable with gcg and therefore we are able to detect changes related to cad. further risk stratification especially in border-line cases can be made based on high-sensitive troponin results. for prognostic risk analysis cardiovascular outcomes will be collected from hospital health records at 1 year and 2 years after the baseline measurements.",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "to validate if the gyroscope and accelerometer derived parameters can identify patients with hemodynamically significant cad in combined contrast ct coronary angiography and pet perfusion imaging in combination of high-sensitive troponin testing",
+        "coronary heart disease (chd)",
+        "the study aims to investigate the epidemiology of cardiometabolic disorders, including coronary heart disease (chd), heart failure (hf), atrial fibrillation (af), type 2 diabetes (t2d), and metabolic syndrome. it focuses on understanding the etiology, prediction, and prognosis of these conditions, providing sex- and gender-specific insights across the spectrum of cardiometabolic disorders.",
+        "the study aims to investigate the epidemiology of cardiometabolic disorders, including coronary heart disease (chd), heart failure (hf), atrial fibrillation (af), type 2 diabetes (t2d), and metabolic syndrome. it focuses on understanding the etiology, prediction, and prognosis of these conditions, providing sex- and gender-specific insights across the spectrum of cardiometabolic disorders.",
+        "the study aims to investigate the epidemiology of cardiometabolic disorders, including coronary heart disease (chd), heart failure (hf), atrial fibrillation (af), type 2 diabetes (t2d), and metabolic syndrome. it focuses on understanding the etiology, prediction, and prognosis of these conditions, providing sex- and gender-specific insights across the spectrum of cardiometabolic disorders.",
+        "acute coronary syndrome within 10 days",
+        "hospitalizations classified as planned or unplanned for reasons of heart failure, coronary artery disease, rhythm disturbances or other ischemic/bleeding events"
+      ],
+      "heart": [
+        "established heart failure",
+        "length of time to non-cardiac death (time to total mortality, time to non-fatal heart attack, time to non-fatal acute coronary syndrome,time to survived sudden cardiac death, time to non-fatal end stage renal failure, how long it takes to develop non-steroidal diabetes in patients with pre-diabetes, time taken to develop non-steroidal diabetes in patients with normoglycemia, time taken to develop non-steroidal pre-diabetes in patients with normoglycemia, time taken to develop hfref in patients with heart failure with mildly reduced ejection fraction (hfmref), time taken to develop)",
+        "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure",
+        "(serious) adverse events diagnosed at the hospital: hearth attack, stroke, angina, hearth failure",
+        "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure",
+        "(serious) adverse events diagnosed at the hospital: hearth attack, stroke, angina, hearth failure",
+        "http://purl.obolibrary.org/obo/obi.owl/acute_heart_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/acute_heart_failure",
+        "acute heart failure",
+        "http://purl.obolibrary.org/obo/obi.owl/acute_heart_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/acute_heart_failure",
+        "acute heart failure",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "chronic obstructive pulmonary disease|heart failure",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "chronic obstructive pulmonary disease|heart failure",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "coronary heart disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "coronary heart disease",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_preserved_ejection_fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_preserved_ejection_fraction",
+        "heart failure with preserved ejection fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_preserved_ejection_fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_preserved_ejection_fraction",
+        "heart failure with preserved ejection fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_and_midrange_ejection_fraction_%28hfref_hfmref%29",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_and_midrange_ejection_fraction_%28hfref_hfmref%29",
+        "heart failure with reduced and midrange ejection fraction (hfref/hfmref)",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_and_midrange_ejection_fraction_%28hfref_hfmref%29",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_and_midrange_ejection_fraction_%28hfref_hfmref%29",
+        "heart failure with reduced and midrange ejection fraction (hfref/hfmref)",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_ejection_fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_ejection_fraction",
+        "heart failure with reduced ejection fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_ejection_fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_ejection_fraction",
+        "heart failure with reduced ejection fraction"
+      ],
+      "disease": [
+        "http://purl.obolibrary.org/obo/obi.owl/cardio-vascular_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cardio-vascular_disease",
+        "cardio-vascular disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cardio-vascular_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cardio-vascular_disease",
+        "cardio-vascular disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cerebrovascular_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cerebrovascular_disease",
+        "cerebrovascular disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cerebrovascular_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cerebrovascular_disease",
+        "cerebrovascular disease",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "chronic obstructive pulmonary disease|heart failure",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/chronic_obstructive_pulmonary_disease%7Cheart_failure",
+        "chronic obstructive pulmonary disease|heart failure",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "coronary artery disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_artery_disease",
+        "coronary artery disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "coronary heart disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/coronary_heart_disease",
+        "coronary heart disease",
+        "http://purl.obolibrary.org/obo/obi.owl/respiratory_system_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/respiratory_system_disease",
+        "respiratory system disease",
+        "http://purl.obolibrary.org/obo/obi.owl/respiratory_system_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/respiratory_system_disease",
+        "respiratory system disease",
+        "https://w3id.org/CMEO/aachenhf/peripheralarterydisease",
+        "to investigate multidimensional drivers of non-communicable diseases across different socio-economic settings (urban, rural, urban-poor)",
+        "longitudinal house hold-based cohort study on non-communicable diseases",
+        "the study is designed\u00a0\u00a0to quantify the burden and trends of non-communicable diseases (ncds), including cardiovascular, metabolic, respiratory, and neoplastic diseases, and related risk factors across different geographical settings in bangladesh and identify their demographic, societal, economic, and hereditary drivers.",
+        "http://purl.obolibrary.org/obo/obi.owl/cardio-vascular_disease",
+        "http://purl.obolibrary.org/obo/obi.owl/cerebrovascular_disease"
+      ]
+    },
+    "retrieved_embeddings": {
+      "studies": [
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        }
+      ],
+      "coronary": [
+        {
+          "text": "coronary heart disease",
+          "score": 0.7923814058303833
+        },
+        {
+          "text": "coronary heart disease",
+          "score": 0.7923814058303833
+        },
+        {
+          "text": "coronary artery disease",
+          "score": 0.7785896062850952
+        },
+        {
+          "text": "coronary artery disease",
+          "score": 0.7785896062850952
+        },
+        {
+          "text": "coronary heart disease (chd)",
+          "score": 0.7630844712257385
+        },
+        {
+          "text": "angina",
+          "score": 0.6500433683395386
+        },
+        {
+          "text": "angina",
+          "score": 0.6500433683395386
+        },
+        {
+          "text": "cardiovascular disease",
+          "score": 0.6398985385894775
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "myocardial infarction",
+          "score": 0.6393027305603027
+        },
+        {
+          "text": "coronary arthery disease",
+          "score": 0.625127911567688
+        },
+        {
+          "text": "cardio-vascular disease",
+          "score": 0.6144081950187683
+        },
+        {
+          "text": "cardio-vascular disease",
+          "score": 0.6144081950187683
+        },
+        {
+          "text": "cardiovascular events",
+          "score": 0.6071736812591553
+        },
+        {
+          "text": "known cardiac disease",
+          "score": 0.5826698541641235
+        },
+        {
+          "text": "non-fatal cardiovascular events",
+          "score": 0.5660058856010437
+        },
+        {
+          "text": "non-fatal myocardial infarction (mi)",
+          "score": 0.5654742121696472
+        },
+        {
+          "text": "acute myocardial infarction",
+          "score": 0.5631731748580933
+        },
+        {
+          "text": "acute myocardial infarction",
+          "score": 0.5631731748580933
+        },
+        {
+          "text": "acute myocardial infarction",
+          "score": 0.5631731748580933
+        },
+        {
+          "text": "acute myocardial infarction",
+          "score": 0.5631731748580933
+        },
+        {
+          "text": "hearth conditions (some)",
+          "score": 0.5617110133171082
+        },
+        {
+          "text": "suspected coronary artery disease",
+          "score": 0.5600587725639343
+        },
+        {
+          "text": "previous myocardial infarction",
+          "score": 0.5467151403427124
+        }
+      ],
+      "heart": [
+        {
+          "text": "hearth conditions (some)",
+          "score": 0.7342569828033447
+        },
+        {
+          "text": "coronary heart disease (chd)",
+          "score": 0.6577345728874207
+        },
+        {
+          "text": "coronary heart disease",
+          "score": 0.6518019437789917
+        },
+        {
+          "text": "coronary heart disease",
+          "score": 0.6518019437789917
+        },
+        {
+          "text": "cardiovascular disease",
+          "score": 0.6454334259033203
+        },
+        {
+          "text": "queen-of-hearts",
+          "score": 0.6319226622581482
+        },
+        {
+          "text": "queen-of-hearts",
+          "score": 0.6319226622581482
+        },
+        {
+          "text": "cardio-vascular disease",
+          "score": 0.6077555418014526
+        },
+        {
+          "text": "cardio-vascular disease",
+          "score": 0.6077555418014526
+        },
+        {
+          "text": "cardiac surgery",
+          "score": 0.5985488891601562
+        },
+        {
+          "text": "cardiovascular events",
+          "score": 0.5925527811050415
+        },
+        {
+          "text": "hearth failure",
+          "score": 0.5741199851036072
+        },
+        {
+          "text": "hearth failure",
+          "score": 0.5741199851036072
+        },
+        {
+          "text": "known cardiac disease",
+          "score": 0.5733921527862549
+        },
+        {
+          "text": "Echocardiography",
+          "score": 0.5693793892860413
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "heart failure",
+          "score": 0.5640733242034912
+        },
+        {
+          "text": "<https://w3id.org/CMEO/queen-of-hearts/human_subject_enrollment>",
+          "score": 0.5616938471794128
+        },
+        {
+          "text": "<https://w3id.org/CMEO/queen-of-hearts/human_subject_enrollment>",
+          "score": 0.5616938471794128
+        },
+        {
+          "text": "<https://w3id.org/CMEO/queen-of-hearts/human_subject_enrollment>",
+          "score": 0.5616938471794128
+        },
+        {
+          "text": "<https://w3id.org/CMEO/queen-of-hearts/human_subject_enrollment>",
+          "score": 0.5616938471794128
+        },
+        {
+          "text": "<https://w3id.org/CMEO/queen-of-hearts/descriptor>",
+          "score": 0.5586202144622803
+        },
+        {
+          "text": "<https://w3id.org/CMEO/queen-of-hearts/descriptor>",
+          "score": 0.5586202144622803
+        }
+      ],
+      "disease": [
+        {
+          "text": "disability",
+          "score": 0.6087089776992798
+        },
+        {
+          "text": "disability",
+          "score": 0.6087089776992798
+        },
+        {
+          "text": "disability",
+          "score": 0.6087089776992798
+        },
+        {
+          "text": "respiratory system disease",
+          "score": 0.6079633235931396
+        },
+        {
+          "text": "respiratory system disease",
+          "score": 0.6079633235931396
+        },
+        {
+          "text": "diabetes",
+          "score": 0.5518383979797363
+        },
+        {
+          "text": "diabetes",
+          "score": 0.5518383979797363
+        },
+        {
+          "text": "since the study includes a broad range of demographic, behavioral, socio-economic, physical and biological factors, multiple diseases and analyses (genomics, proteomics, metabolomics), there can be multiple secondary outcomes. some examples: to inform public health action in a representative low-middle income country (bangladesh)",
+          "score": 0.5409532785415649
+        },
+        {
+          "text": "neurodegenerative and psychiatric disorders",
+          "score": 0.516099214553833
+        },
+        {
+          "text": "neurodegenerative and psychiatric disorders",
+          "score": 0.516099214553833
+        },
+        {
+          "text": "deaths",
+          "score": 0.5157209038734436
+        },
+        {
+          "text": "german",
+          "score": 0.49189943075180054
+        },
+        {
+          "text": "german",
+          "score": 0.49189943075180054
+        },
+        {
+          "text": "metabolic diseases",
+          "score": 0.48543062806129456
+        },
+        {
+          "text": "metabolic diseases",
+          "score": 0.48543062806129456
+        },
+        {
+          "text": "hearth conditions (some)",
+          "score": 0.480233371257782
+        },
+        {
+          "text": "all-cause death",
+          "score": 0.47430747747421265
+        },
+        {
+          "text": "all-cause death",
+          "score": 0.47430747747421265
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "TRUE",
+          "score": 0.4715788662433624
+        },
+        {
+          "text": "hospitalizations",
+          "score": 0.4698774814605713
+        },
+        {
+          "text": "any type of cancer",
+          "score": 0.4636997878551483
+        },
+        {
+          "text": "neuropathy",
+          "score": 0.46139317750930786
+        }
+      ]
+    }
+  },
+  {
+    "idx": 2,
     "nl": "Find count of variables related to time-chf study",
     "nl_keywords": "time-chf study",
     "sparql": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\nSELECT (COUNT(?data_element) AS ?var_count)\nWHERE {\n  GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n    ?study a obi:study_design_execution ;\n           dc:identifier 'time-chf' ;\n           ro:concretizes ?study_design .\n    ?study_design ro:has_part ?protocol .\n    ?protocol ro:has_part ?study_var_design .\n    ?study_var_design a cmeo:study_design_variable_specification ;\n                      ro:has_part ?data_element .\n  }\n}",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
     "prefix": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\n",
-    "idx": 2,
     "retrieved_terms": {
       "time-chf": [
         "https://w3id.org/CMEO/time-chf/administrator",
@@ -405,58 +1117,63 @@
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/minimum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
-        "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/maximum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/maximum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/minimum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/minimum_age_value_specification",
-        "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
-        "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/clinically_relevant_exposure_exclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/clinically_relevant_exposure_exclusion_criterion"
       ],
       "study": [
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification",
-        "https://w3id.org/CMEO/d1namo/study_design_variable_specification"
+        "https://w3id.org/CMEO/maastrichtstudy/output_population",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person",
+        "https://w3id.org/CMEO/aachenhf/study_design_execution",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_execution",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person_role",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person_role",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person_role",
+        "https://w3id.org/CMEO/study_contact_person_role",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person_role/email_address",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person_role/email_address",
+        "https://w3id.org/CMEO/aachenhf/study_contact_person_role/email_address",
+        "https://w3id.org/CMEO/aachenhf/study_design_execution",
+        "https://w3id.org/CMEO/aachenhf/study_design_execution",
+        "https://w3id.org/CMEO/aachenhf/study_design_execution",
+        "http://purl.obolibrary.org/obo/obi.owl/study_design_execution",
+        "https://w3id.org/CMEO/aachenhf/study_design_execution",
+        "https://w3id.org/CMEO/aachenhf/study_design_execution",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
+        "https://w3id.org/CMEO/aachenhf/study_design_variable_specification"
       ]
     },
     "retrieved_embeddings": {
@@ -471,27 +1188,27 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr>",
-          "score": 0.8492684364318848
+          "score": 0.8492685556411743
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/descriptor>",
-          "score": 0.8385674357414246
+          "score": 0.8385673761367798
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/descriptor>",
-          "score": 0.8385674357414246
+          "score": 0.8385673761367798
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/descriptor>",
-          "score": 0.8385674357414246
+          "score": 0.8385673761367798
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hct>",
-          "score": 0.823718786239624
+          "score": 0.8237188458442688
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/a>",
-          "score": 0.823296844959259
+          "score": 0.8232969045639038
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/ti>",
@@ -499,15 +1216,15 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/ec>",
-          "score": 0.8122177720069885
+          "score": 0.8122178316116333
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr6>",
-          "score": 0.8113281726837158
+          "score": 0.8113282918930054
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v6>",
-          "score": 0.8100059032440186
+          "score": 0.8100059628486633
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hrecg>",
@@ -515,23 +1232,23 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/ms>",
-          "score": 0.806755542755127
+          "score": 0.8067556023597717
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hct6>",
-          "score": 0.806456983089447
+          "score": 0.8064570426940918
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr1>",
-          "score": 0.8049633502960205
+          "score": 0.8049632906913757
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/lc>",
-          "score": 0.8044675588607788
+          "score": 0.804467499256134
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v3>",
-          "score": 0.8033891916275024
+          "score": 0.8033892512321472
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v1>",
@@ -539,11 +1256,11 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v12>",
-          "score": 0.7991757392883301
+          "score": 0.7991758584976196
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr3>",
-          "score": 0.7978633046150208
+          "score": 0.797863245010376
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/py>",
@@ -551,7 +1268,7 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/dt>",
-          "score": 0.7964447736740112
+          "score": 0.796444833278656
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr12>",
@@ -559,19 +1276,19 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v6tora>",
-          "score": 0.7926105260848999
+          "score": 0.7926105856895447
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v6furo>",
-          "score": 0.792136549949646
+          "score": 0.7921366095542908
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/famhist>",
-          "score": 0.7920370697975159
+          "score": 0.7920371294021606
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hhd>",
-          "score": 0.7907569408416748
+          "score": 0.7907570004463196
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/height>",
@@ -704,49 +1421,15 @@
           "score": 0.6489279270172119
         }
       ]
-    },
-    "nhop_path": [
-      [
-        "https://w3id.org/CMEO/time-chf/ongoing",
-        "http://purl.obolibrary.org/obo/iao.owl/is_about",
-        "https://w3id.org/CMEO/time-chf/study_design_execution"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/study_design_execution",
-        "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial/protocol"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/study_design_variable_specification"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/study_design_variable_specification",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/hr"
-      ]
-    ],
-    "onehop_path": [
-      [
-        "https://w3id.org/CMEO/time-chf/study_design_variable_specification",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/hr"
-      ]
-    ]
+    }
   },
   {
+    "idx": 3,
     "nl": "Find count of all drug related variables in time-chf",
     "nl_keywords": "drug time-chf",
     "sparql": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\nSELECT (COUNT(?data_element) AS ?var_count)\nWHERE {\n  GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n    ?study a obi:study_design_execution ;\n           dc:identifier 'time-chf' ;\n           ro:concretizes ?study_design .\n    ?study_design ro:has_part ?protocol .\n    ?protocol ro:has_part ?study_var_design .\n    ?study_var_design a cmeo:study_design_variable_specification ;\n                      ro:has_part ?data_element .\n  }\n  GRAPH ?studyGraph {\n    ?data_element a cmeo:data_element ;\n                  obi:is_specified_input_of ?catProcessA, ?stdProcessA .\n    ?catProcessA a cmeo:categorization_process ;\n                 obi:has_specified_output ?cat_outputA .\n    ?cat_outputA cmeo:has_value \"drug_exposure\" .\n  }\n}",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
     "prefix": "PREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\n",
-    "idx": 3,
     "retrieved_terms": {
       "drug": [
         "treatment with study drug in the last 10 days",
@@ -775,25 +1458,26 @@
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/minimum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
-        "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/maximum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/maximum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/minimum_age_value_specification",
         "https://w3id.org/CMEO/time-chf/age_group_inclusion_criterion/minimum_age_value_specification",
-        "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
-        "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/bmi_range_exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/bmi_range_inclusion_criterion",
         "https://w3id.org/CMEO/time-chf/clinically_relevant_exposure_exclusion_criterion",
+        "https://w3id.org/CMEO/time-chf/exclusion_criterion",
         "https://w3id.org/CMEO/time-chf/clinically_relevant_exposure_exclusion_criterion"
       ]
     },
@@ -801,111 +1485,111 @@
       "drug": [
         {
           "text": "use_of_medication_inclusion_criterion",
-          "score": 0.536098837852478
+          "score": 0.5360987782478333
         },
         {
           "text": "use_of_medication_inclusion_criterion",
-          "score": 0.536098837852478
+          "score": 0.5360987782478333
         },
         {
           "text": "use_of_medication_inclusion_criterion",
-          "score": 0.536098837852478
+          "score": 0.5360987782478333
         },
         {
           "text": "use_of_medication_inclusion_criterion",
-          "score": 0.536098837852478
+          "score": 0.5360987782478333
         },
         {
           "text": "deaths",
-          "score": 0.48288100957870483
+          "score": 0.4828810691833496
         },
         {
           "text": "determinants analyzed",
-          "score": 0.45392221212387085
+          "score": 0.4539222717285156
         },
         {
           "text": "treatment with medications or devices not approved in europe",
-          "score": 0.45269453525543213
+          "score": 0.4526945650577545
         },
         {
           "text": "treatment with medications or devices not approved in europe",
-          "score": 0.45269453525543213
+          "score": 0.4526945650577545
         },
         {
           "text": "adherence to drug therapy guidelines",
-          "score": 0.4526768922805786
+          "score": 0.4526768624782562
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "intervention specification",
-          "score": 0.45205074548721313
+          "score": 0.4520508050918579
         },
         {
           "text": "disability",
-          "score": 0.45145314931869507
+          "score": 0.45145320892333984
         },
         {
           "text": "disability",
-          "score": 0.45145314931869507
+          "score": 0.45145320892333984
         },
         {
           "text": "disability",
-          "score": 0.45145314931869507
+          "score": 0.45145320892333984
         },
         {
           "text": "medications: diabetes-related and other drugs",
-          "score": 0.44634753465652466
+          "score": 0.44634759426116943
         },
         {
           "text": "predictor",
-          "score": 0.4389271140098572
+          "score": 0.43892714381217957
         },
         {
           "text": "predictor",
-          "score": 0.4389271140098572
+          "score": 0.43892714381217957
         },
         {
           "text": "german",
@@ -917,7 +1601,7 @@
         },
         {
           "text": "Standard care",
-          "score": 0.4301515817642212
+          "score": 0.4301516115665436
         }
       ],
       "time-chf": [
@@ -931,27 +1615,27 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr>",
-          "score": 0.8492684364318848
+          "score": 0.8492685556411743
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/descriptor>",
-          "score": 0.8385674357414246
+          "score": 0.8385673761367798
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/descriptor>",
-          "score": 0.8385674357414246
+          "score": 0.8385673761367798
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/descriptor>",
-          "score": 0.8385674357414246
+          "score": 0.8385673761367798
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hct>",
-          "score": 0.823718786239624
+          "score": 0.8237188458442688
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/a>",
-          "score": 0.823296844959259
+          "score": 0.8232969045639038
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/ti>",
@@ -959,15 +1643,15 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/ec>",
-          "score": 0.8122177720069885
+          "score": 0.8122178316116333
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr6>",
-          "score": 0.8113281726837158
+          "score": 0.8113282918930054
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v6>",
-          "score": 0.8100059032440186
+          "score": 0.8100059628486633
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hrecg>",
@@ -975,23 +1659,23 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/ms>",
-          "score": 0.806755542755127
+          "score": 0.8067556023597717
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hct6>",
-          "score": 0.806456983089447
+          "score": 0.8064570426940918
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr1>",
-          "score": 0.8049633502960205
+          "score": 0.8049632906913757
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/lc>",
-          "score": 0.8044675588607788
+          "score": 0.804467499256134
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v3>",
-          "score": 0.8033891916275024
+          "score": 0.8033892512321472
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v1>",
@@ -999,11 +1683,11 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v12>",
-          "score": 0.7991757392883301
+          "score": 0.7991758584976196
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr3>",
-          "score": 0.7978633046150208
+          "score": 0.797863245010376
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/py>",
@@ -1011,7 +1695,7 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/dt>",
-          "score": 0.7964447736740112
+          "score": 0.796444833278656
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hr12>",
@@ -1019,19 +1703,19 @@
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v6tora>",
-          "score": 0.7926105260848999
+          "score": 0.7926105856895447
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/v6furo>",
-          "score": 0.792136549949646
+          "score": 0.7921366095542908
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/famhist>",
-          "score": 0.7920370697975159
+          "score": 0.7920371294021606
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/hhd>",
-          "score": 0.7907569408416748
+          "score": 0.7907570004463196
         },
         {
           "text": "<https://w3id.org/CMEO/time-chf/height>",
@@ -1042,49 +1726,15 @@
           "score": 0.7905051112174988
         }
       ]
-    },
-    "onehop_path": [
-      [
-        "https://w3id.org/CMEO/time-chf/study_design_variable_specification",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/hr"
-      ]
-    ],
-    "nhop_path": [
-      [
-        "https://w3id.org/CMEO/time-chf/ongoing",
-        "http://purl.obolibrary.org/obo/iao.owl/is_about",
-        "https://w3id.org/CMEO/time-chf/study_design_execution"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/study_design_execution",
-        "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial/protocol"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/study_design_variable_specification"
-      ],
-      [
-        "https://w3id.org/CMEO/time-chf/study_design_variable_specification",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/time-chf/hr"
-      ]
-    ]
+    }
   },
   {
+    "idx": 4,
     "nl": "What are the protocol specifications of the randomized controlled trials?",
     "nl_keywords": "protocol specifications randomized controlled trials",
     "sparql": "PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:   <http://purl.org/dc/elements/1.1/>\nPREFIX bfo:  <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\nSELECT\n    ?study_name\n(GROUP_CONCAT(DISTINCT COALESCE(?part_uri); separator=\";\") AS ?all_parts_uri)\n(GROUP_CONCAT(DISTINCT COALESCE(?part_value); separator=\";\") AS ?all_parts_value)\n\nWHERE {\n  GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n      ?study  a cmeo:randomized_controlled_trial;\n              ro:has_part   ?protocol;\n              dc:identifier ?study_name.\n      ?protocol a obi:protocol;\n              (ro:has_part)+ ?part_uri .\n      ?part_uri cmeo:has_value ?part_value.\n  }\n}\nGROUP BY ?study_name",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
     "prefix": "PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:   <http://purl.org/dc/elements/1.1/>\nPREFIX bfo:  <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\n",
-    "idx": 4,
     "retrieved_terms": {
       "protocol": [
         "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
@@ -1811,88 +2461,21 @@
           "score": 0.6029003858566284
         }
       ]
-    },
-    "nhop_path": [
-      [
-        "https://w3id.org/CMEO/avanti/ongoing",
-        "http://purl.obolibrary.org/obo/iao.owl/is_about",
-        "https://w3id.org/CMEO/avanti/study_design_execution"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/study_design_execution",
-        "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/number_of_participants"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/number_of_participants",
-        "http://purl.obolibrary.org/obo/ro.owl/is_part_of",
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol"
-      ]
-    ],
-    "onehop_path": [
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/eligibility_criterion"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/number_of_participants"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/outcome_specification"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/study_design_variable_specification"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/timeline_specification"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "http://purl.obolibrary.org/obo/obi.owl/protocol"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/number_of_participants",
-        "http://purl.obolibrary.org/obo/ro.owl/is_part_of",
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol"
-      ],
-      [
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol"
-      ]
-    ]
+    }
   },
   {
+    "idx": 5,
     "nl": "Which studies investigated heart failure condition?",
-    "nl_keywords": "heart failure condition",
+    "nl_keywords": "studies heart failure condition",
     "sparql": "PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:   <http://purl.org/dc/elements/1.1/>\nPREFIX bfo:  <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX sio: <http://semanticscience.org/ontology/sio.owl/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>\n\nSELECT DISTINCT ?study_name ?description\nWHERE {\n    GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n        ?study_design dc:identifier ?study_name;\n            iao:is_about ?descriptor;\n            ro:has_part ?prot .\n        ?descriptor rdfs:label ?description.\n        ?prot a obi:protocol;\n          ro:has_part ?obj_spec.\n        ?obj_spec a obi:objective_specification ;\n            cmeo:has_value ?obj_val.\n        ?prot ro:has_part ?ec.\n        ?ec a obi:eligibility_criterion;\n            ro:has_part ?inc.\n        ?inc a obi:inclusion_criterion;\n            ro:has_part ?spec_inc.\n        ?spec_inc  cmeo:has_value ?inc_value.\n    \n    FILTER(contains(?obj_val,\"heart failure\") || contains(?inc_value,\"heart failure\"))\n  }\n}",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata> ",
     "prefix": "PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:   <http://purl.org/dc/elements/1.1/>\nPREFIX bfo:  <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX sio: <http://semanticscience.org/ontology/sio.owl/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>\n\n",
-    "idx": 5,
     "retrieved_terms": {
+      "studies": [
+        "the study includes substudies aimed at evaluating the mechanisms underlying atrial fibrillation (af) recurrence. one substudy focuses on left atrial remodeling, assessing the effect of valsartan on left atrial dimensions using echocardiography. this investigation is based on the hypothesis that valsartan may counteract structural remodeling, such as atrial dilation or fibrosis, which contributes to the onset and maintenance of af. another substudy examines neurohormonal modulation, involving the measurement of key neurohormones including brain natriuretic peptide (bnp), norepinephrine, and aldosterone. these biomarkers serve as indicators of neurohormonal activation, a physiological response commonly observed in patients with af and associated cardiovascular comorbidities.",
+        "to elucidate the complex underlying pathophysiology of t2dm and the interaction with other chronic diseases. this requires not only a large population-based subset of t2dm patients, but also a population-based cohort of individuals without t2dm and individuals at high risk to develop t2dm. such studies are currently not available and the maastricht study intends to fill this gap. it aims to identify determinants of the development and progression of (a) t2dm; (b) its classic complications (cardiovascular disease, retinopathy, neuropathy and nephropathy); and (c) its emerging comorbidities, such as cognitive decline, depression, and gastrointestinal, musculoskeletal and respiratory diseases."
+      ],
       "heart": [
-        "established heart failure",
-        "length of time to non-cardiac death (time to total mortality, time to non-fatal heart attack, time to non-fatal acute coronary syndrome,time to survived sudden cardiac death, time to non-fatal end stage renal failure, how long it takes to develop non-steroidal diabetes in patients with pre-diabetes, time taken to develop non-steroidal diabetes in patients with normoglycemia, time taken to develop non-steroidal pre-diabetes in patients with normoglycemia, time taken to develop hfref in patients with heart failure with mildly reduced ejection fraction (hfmref), time taken to develop)",
         "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure",
         "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure",
         "(serious) adverse events diagnosed at the hospital: hearth attack, stroke, angina, hearth failure",
@@ -1934,7 +2517,10 @@
         "heart failure with reduced ejection fraction",
         "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_ejection_fraction",
         "http://purl.obolibrary.org/obo/obi.owl/heart_failure_with_reduced_ejection_fraction",
-        "heart failure with reduced ejection fraction"
+        "heart failure with reduced ejection fraction",
+        "http://purl.obolibrary.org/obo/obi.owl/hearth_failure",
+        "http://purl.obolibrary.org/obo/obi.owl/hearth_failure",
+        "hearth failure"
       ],
       "failure": [
         "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure",
@@ -1995,6 +2581,128 @@
       ]
     },
     "retrieved_embeddings": {
+      "studies": [
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        }
+      ],
       "heart": [
         {
           "text": "hearth conditions (some)",
@@ -2361,61 +3069,185 @@
           "score": 0.615094780921936
         }
       ]
-    },
-    "nhop_path": [
-      [
-        "https://w3id.org/CMEO/interval/ongoing",
-        "http://purl.obolibrary.org/obo/iao.owl/is_about",
-        "https://w3id.org/CMEO/interval/study_design_execution"
-      ],
-      [
-        "https://w3id.org/CMEO/interval/study_design_execution",
-        "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-        "https://w3id.org/CMEO/interval/randomized_controlled_trial"
-      ],
-      [
-        "https://w3id.org/CMEO/interval/randomized_controlled_trial",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/interval/randomized_controlled_trial/protocol"
-      ],
-      [
-        "https://w3id.org/CMEO/interval/randomized_controlled_trial/protocol",
-        "http://purl.obolibrary.org/obo/ro.owl/has_part",
-        "https://w3id.org/CMEO/interval/eligibility_criterion"
-      ],
-      [
-        "https://w3id.org/CMEO/interval/eligibility_criterion",
-        "http://purl.obolibrary.org/obo/ro.owl/is_concretized_by",
-        "https://w3id.org/CMEO/interval/human_subject_enrollment"
-      ],
-      [
-        "https://w3id.org/CMEO/interval/human_subject_enrollment",
-        "http://purl.obolibrary.org/obo/ro.owl/has_output",
-        "https://w3id.org/CMEO/interval/output_population"
-      ],
-      [
-        "https://w3id.org/CMEO/interval/output_population",
-        "http://purl.obolibrary.org/obo/ro.owl/has_characteristic",
-        "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure"
-      ]
-    ]
+    }
   },
   {
+    "idx": 6,
     "nl": "What are the population characteristics in different studies",
-    "nl_keywords": "characteristics",
+    "nl_keywords": "population characteristics studies",
     "sparql": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\nSELECT ?study_name (GROUP_CONCAT(DISTINCT LCASE(STR(?quality_value)); separator=\"; \") AS ?qualities)\n(GROUP_CONCAT(DISTINCT LCASE(STR(?quality_type)); separator=\"; \") AS ?quality_type)\nWHERE {\nGRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n\t ?study_design dc:identifier ?study_name ;\n            ro:has_part ?prot .\n        ?prot a obi:protocol ;\n            ro:has_part ?ec .\n        ?ec a obi:eligibility_criterion ;\n            ro:is_concretized_by ?hse_uri .\n        ?hse_uri ro:has_output ?population .\n        ?population a obi:population ;\n            ro:has_characteristic ?quality .\n        OPTIONAL { ?quality rdfs:label ?characteristic_value }\n        OPTIONAL { ?quality a  ?characteristic_type }\n}\n}\nGROUP BY ?study_name\nLIMIT 3",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
     "prefix": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\n",
-    "idx": 6,
     "retrieved_terms": {
+      "population": [
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/comrate/output_population",
+        "https://w3id.org/CMEO/gissi-3/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/pnh-n1/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/ear/output_population",
+        "https://w3id.org/CMEO/decade/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/cardiateam/output_population",
+        "https://w3id.org/CMEO/check-hf/output_population",
+        "https://w3id.org/CMEO/panache/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/cycle/output_population",
+        "https://w3id.org/CMEO/maastrichtstudy/output_population",
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/sfdt1/output_population",
+        "https://w3id.org/CMEO/aachenhf/input_population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "https://w3id.org/CMEO/aachenhf/input_population",
+        "http://purl.obolibrary.org/obo/obi.owl/population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "http://purl.obolibrary.org/obo/obi.owl/population",
+        "https://w3id.org/CMEO/aachenhf/output_population/site",
+        "https://w3id.org/CMEO/aachenhf/output_population"
+      ],
       "characteristics": [
         "the study aims to validate hf specific characteristics obtained with accelerometer and gyroscope against the current gold standard, detailed echocardiography examination in individuals already diagnosed with hf. data of anonymised subjects without diagnosed or suspected hf will be used as controls to study the detection of hf. from data derived from these sensors, we hypothesize that the echocardiography validated signals will enable to detect changes characteristic for hf and hf decompensation providing detection accuracy of >80%.",
         "the study aims to validate heart failure specific characteristics obtained with accelerometer and gyroscope against the current gold standard, detailed echocardiography examination in individuals already diagnosed with hf. data of anonymised subjects without diagnosed or suspected hf will be used as controls to study the detection of hf.",
         "our primary objective is to identify new risk factors associated with major adverse cardiovascular events in patients with t1d; the secondary objectives are, in patients with t1d, to:   1)evaluate classical risk factors associated with incident mace in patients with t1d; 2)evaluate the role of gv (including hypoglycaemia) in health events (complications, qol, mortality); 3) evaluate the relationship between microangiopathy and macrovascular complications;  4) identify and characterise novel biomarkers and metabolic pathways associated to health events (complications, qol, mortality); 5) identify psychosocial factors associated with health events (complications, qol, mortality); 6) identify the impacts of therapeutic innovations and care on metabolic control and diabetic  complications; 7)identify the impact of medications on metabolic control and diabetic complication; 8) assessing the economic burden of t1d and its complications using various perspeproectives and according to both patients\u2019 clinical and socio-economic characteristics and their health care pathways. to reach these objectives, we will build a robust research resource that can facilitate the exploration of biological, clinical, social, and environmental determinants of t1d and its  complications; also beyond this study with a health data warehouse datastore format.",
         "observational, prospective registry with biobank to assess the characteristics of hfref patients and evaluate treatment trends, treatment response and outcomes"
+      ],
+      "studies": [
+        "the study includes substudies aimed at evaluating the mechanisms underlying atrial fibrillation (af) recurrence. one substudy focuses on left atrial remodeling, assessing the effect of valsartan on left atrial dimensions using echocardiography. this investigation is based on the hypothesis that valsartan may counteract structural remodeling, such as atrial dilation or fibrosis, which contributes to the onset and maintenance of af. another substudy examines neurohormonal modulation, involving the measurement of key neurohormones including brain natriuretic peptide (bnp), norepinephrine, and aldosterone. these biomarkers serve as indicators of neurohormonal activation, a physiological response commonly observed in patients with af and associated cardiovascular comorbidities.",
+        "to elucidate the complex underlying pathophysiology of t2dm and the interaction with other chronic diseases. this requires not only a large population-based subset of t2dm patients, but also a population-based cohort of individuals without t2dm and individuals at high risk to develop t2dm. such studies are currently not available and the maastricht study intends to fill this gap. it aims to identify determinants of the development and progression of (a) t2dm; (b) its classic complications (cardiovascular disease, retinopathy, neuropathy and nephropathy); and (c) its emerging comorbidities, such as cognitive decline, depression, and gastrointestinal, musculoskeletal and respiratory diseases."
       ]
     },
     "retrieved_embeddings": {
+      "population": [
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        }
+      ],
       "characteristics": [
         {
           "text": "objective specification",
@@ -2537,22 +3369,895 @@
           "text": "objective specification",
           "score": 0.5828859210014343
         }
+      ],
+      "studies": [
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        }
       ]
     }
   },
   {
+    "idx": 7,
     "nl": "Which studies match the PICO criteria?",
-    "nl_keywords": "criteria",
+    "nl_keywords": "studies Population Intervention Comparison Outcome criteria",
     "sparql": "PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:   <http://purl.org/dc/elements/1.1/>\nPREFIX bfo:  <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX sio: <http://semanticscience.org/ontology/sio/v1.59/sio-release.owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT DISTINCT ?study_name \n(GROUP_CONCAT(DISTINCT CONCAT(LCASE(STR(?diagnosis_value)), \" [\", STR(?min_val), \"-\", STR(?max_value), \"]\"); SEPARATOR=\"; \") AS ?population)\n(GROUP_CONCAT(DISTINCT LCASE(STR(?intervention_value)); separator=\"; \") AS ?interventions)\n(GROUP_CONCAT(DISTINCT LCASE(STR(?comparator_value)); separator=\"; \") AS ?comparators)\n(GROUP_CONCAT(DISTINCT LCASE(STR(?outcome_value)); separator=\"; \") AS ?outcomes)\nWHERE {\n    GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n        ?study_design dc:identifier ?study_name;\n             ro:has_part ?prot .\n        ?prot a obi:protocol;\n        # Population from inclusion criteria\n        \tro:has_part ?eligibility_criterion .\n        ?eligibility_criterion a obi:eligibility_criterion ;\n            ro:has_part ?inclusion_criteria .\n        ?inclusion_criteria a obi:inclusion_criterion ;\n            ro:has_part ?inc_part.\n\n    \t#DIAGNOSTIC INCLUSION\n    \tOPTIONAL{\n       \t ?inc_part a obi:health_status_inclusion_criterion;\n              cmeo:has_value ?diagnosis_value .\n         FILTER(contains(?diagnosis_value, \"nyha class ii\"))\n      }\n      #AGE INCLUSION\n      OPTIONAL{\n         ?inc_part a obi:age_group_inclusion_criterion;\n            ro:has_part ?min_val_specification, ?max_value_specification.\n          ?min_val_specification a obi:minimum_age_value_specification;\n              cmeo:has_value ?min_val.\n          ?max_value_specification a obi:maximum_age_value_specification;\n              cmeo:has_value  ?max_value.\n          FILTER(xsd:integer(?min_val) >= 60 && xsd:integer(?max_value) <= 85)\n      }\n     # Intervention\n    \tOPTIONAL{\n        ?prot ro:has_part ?intervention .\n        ?intervention a cmeo:intervention_specification; cmeo:has_value ?intervention_value .\n        FILTER(contains(?intervention_value, \"intensified\"))\n     }\n        # Comparator\n        ?prot ro:has_part ?comparator .\n        ?comparator a cmeo:comparator_specification; cmeo:has_value ?comparator_value .\n        FILTER(contains(?comparator_value, \"standard guided\"))\n        # Outcomes\n     }\n      OPTIONAL{\n        ?prot ro:has_part ?outcome .\n        ?outcome a cmeo:outcome_specification;\n                ro:has_part ?suboutcome_uri.\n        ?suboutcome_uri  cmeo:has_value ?outcome_value .\n        FILTER(contains(?outcome_value, \"survival\"))\n    }\n}\nGROUP BY ?study_name",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
     "prefix": "PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:   <http://purl.org/dc/elements/1.1/>\nPREFIX bfo:  <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX sio: <http://semanticscience.org/ontology/sio/v1.59/sio-release.owl#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\n",
-    "idx": 7,
     "retrieved_terms": {
+      "studies": [
+        "the study includes substudies aimed at evaluating the mechanisms underlying atrial fibrillation (af) recurrence. one substudy focuses on left atrial remodeling, assessing the effect of valsartan on left atrial dimensions using echocardiography. this investigation is based on the hypothesis that valsartan may counteract structural remodeling, such as atrial dilation or fibrosis, which contributes to the onset and maintenance of af. another substudy examines neurohormonal modulation, involving the measurement of key neurohormones including brain natriuretic peptide (bnp), norepinephrine, and aldosterone. these biomarkers serve as indicators of neurohormonal activation, a physiological response commonly observed in patients with af and associated cardiovascular comorbidities.",
+        "to elucidate the complex underlying pathophysiology of t2dm and the interaction with other chronic diseases. this requires not only a large population-based subset of t2dm patients, but also a population-based cohort of individuals without t2dm and individuals at high risk to develop t2dm. such studies are currently not available and the maastricht study intends to fill this gap. it aims to identify determinants of the development and progression of (a) t2dm; (b) its classic complications (cardiovascular disease, retinopathy, neuropathy and nephropathy); and (c) its emerging comorbidities, such as cognitive decline, depression, and gastrointestinal, musculoskeletal and respiratory diseases."
+      ],
+      "Population": [
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/comrate/output_population",
+        "https://w3id.org/CMEO/gissi-3/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/pnh-n1/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/ear/output_population",
+        "https://w3id.org/CMEO/decade/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/cardiateam/output_population",
+        "https://w3id.org/CMEO/check-hf/output_population",
+        "https://w3id.org/CMEO/panache/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/believe/output_population",
+        "https://w3id.org/CMEO/cycle/output_population",
+        "https://w3id.org/CMEO/maastrichtstudy/output_population",
+        "https://w3id.org/CMEO/interval/output_population",
+        "https://w3id.org/CMEO/sfdt1/output_population",
+        "https://w3id.org/CMEO/aachenhf/input_population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "https://w3id.org/CMEO/aachenhf/input_population",
+        "http://purl.obolibrary.org/obo/obi.owl/population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "https://w3id.org/CMEO/aachenhf/output_population",
+        "http://purl.obolibrary.org/obo/obi.owl/population",
+        "https://w3id.org/CMEO/aachenhf/output_population/site",
+        "https://w3id.org/CMEO/aachenhf/output_population"
+      ],
+      "Intervention": [
+        "anticipated need for surgery or any cardiovascular intervention, except implantable cardioverter defibrillator and/or cardiac resynchronization therapy, within 4 weeks",
+        "or percutaneous coronary intervention. the absence of a coronary artery disease was diagnosed with either an absence of coronary stenosis \u2265 50% or a coronary artery calcium score (cac) of below 100 on a cardiac ct scan or a coronary angiography with a normal fractional flow reserve (ffr >0.80), 48 months prior to inclusion.",
+        "https://w3id.org/CMEO/dp5/intervention",
+        "On the first morning of the 13 day study-period the participants were asked to perform an Oral Glucose Tolerance Test (OGTT, after 10 hr overnight fasting). The OGTT is rather a challange then an intervention in order to measure the glycemic resilience. During the remaining days of the study, the participants follow their normal dietary pattern.",
+        "https://w3id.org/CMEO/dp5/intervention",
+        "https://w3id.org/CMEO/intervention_specification",
+        "https://w3id.org/CMEO/dp5/intervention",
+        "intervention specification",
+        "https://w3id.org/CMEO/dp5/intervention",
+        "https://w3id.org/CMEO/gissi_prevenzione/intervention",
+        "https://w3id.org/CMEO/gissi_prevenzione/intervention",
+        "https://w3id.org/CMEO/intervention_specification",
+        "https://w3id.org/CMEO/gissi_prevenzione/intervention",
+        "intervention specification",
+        "https://w3id.org/CMEO/gissi_prevenzione/intervention",
+        "https://w3id.org/CMEO/gissi-3/intervention",
+        "https://w3id.org/CMEO/gissi-3/intervention",
+        "https://w3id.org/CMEO/intervention_specification",
+        "https://w3id.org/CMEO/gissi-3/intervention",
+        "intervention specification",
+        "https://w3id.org/CMEO/gissi-3/intervention",
+        "https://w3id.org/CMEO/gissi-af/intervention",
+        "https://w3id.org/CMEO/gissi-af/intervention",
+        "https://w3id.org/CMEO/intervention_specification",
+        "https://w3id.org/CMEO/gissi-af/intervention",
+        "intervention specification",
+        "https://w3id.org/CMEO/gissi-af/intervention",
+        "https://w3id.org/CMEO/gissi-hf-outcomes/intervention",
+        "https://w3id.org/CMEO/gissi-hf-outcomes/intervention",
+        "https://w3id.org/CMEO/intervention_specification",
+        "https://w3id.org/CMEO/gissi-hf-outcomes/intervention",
+        "intervention specification",
+        "https://w3id.org/CMEO/gissi-hf-outcomes/intervention",
+        "https://w3id.org/CMEO/gissi-hf/intervention",
+        "https://w3id.org/CMEO/gissi-hf/intervention",
+        "https://w3id.org/CMEO/intervention_specification",
+        "https://w3id.org/CMEO/gissi-hf/intervention",
+        "intervention specification",
+        "https://w3id.org/CMEO/gissi-hf/intervention",
+        "https://w3id.org/CMEO/gluco-insight/intervention",
+        "https://w3id.org/CMEO/gluco-insight/intervention",
+        "https://w3id.org/CMEO/intervention_specification",
+        "https://w3id.org/CMEO/gluco-insight/intervention",
+        "intervention specification",
+        "to gain a better understanding of the relation between blood glucose levels and patterns, and contextual data in individuals with t2d. an enhanced understanding of this relation can provide insights on how individuals with t2d can modify their lifestyle to improve glycaemic control. additionally, it is aimed to assess how different lifestyle interventions that are proven effective on a population level (mediterranean diet, low-carb diet, pa) affect glucose fluctuations and specific cgm parameters for individuals. to make sense of the generated data, a combination of traditional and novel analysis/ modelling techniques will be used."
+      ],
+      "Comparison": [],
+      "Outcome": [
+        "https://w3id.org/CMEO/aachenhf/outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/primary_outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/secondary_outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/outcome_specification",
+        "https://w3id.org/CMEO/outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/outcome_specification",
+        "outcome specification",
+        "https://w3id.org/CMEO/aachenhf/primary_outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/primary_outcome_specification",
+        "https://w3id.org/CMEO/primary_outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/primary_outcome_specification",
+        "primary outcome specification",
+        "https://w3id.org/CMEO/aachenhf/primary_outcome_specification",
+        "secondary outcome specification",
+        "https://w3id.org/CMEO/aachenhf/secondary_outcome_specification",
+        "https://w3id.org/CMEO/aachenhf/secondary_outcome_specification",
+        "https://w3id.org/CMEO/secondary_outcome_specification",
+        "https://w3id.org/CMEO/alohas/outcome_specification",
+        "https://w3id.org/CMEO/alohas/outcome_specification",
+        "https://w3id.org/CMEO/outcome_specification",
+        "https://w3id.org/CMEO/alohas/outcome_specification",
+        "outcome specification",
+        "https://w3id.org/CMEO/avanti/outcome_specification",
+        "https://w3id.org/CMEO/outcome_specification",
+        "https://w3id.org/CMEO/avanti/outcome_specification",
+        "outcome specification",
+        "https://w3id.org/CMEO/avanti/outcome_specification",
+        "https://w3id.org/CMEO/believe/outcome_specification",
+        "https://w3id.org/CMEO/believe/outcome_specification",
+        "https://w3id.org/CMEO/believe/primary_outcome_specification",
+        "https://w3id.org/CMEO/believe/outcome_specification",
+        "https://w3id.org/CMEO/outcome_specification",
+        "https://w3id.org/CMEO/believe/outcome_specification",
+        "outcome specification",
+        "https://w3id.org/CMEO/believe/primary_outcome_specification",
+        "https://w3id.org/CMEO/believe/primary_outcome_specification",
+        "since the study includes a broad range of demographic, behavioral, socio-economic, physical and biological factors, multiple diseases and analyses (genomics, proteomics, metabolomics), there can be multiple secondary outcomes. some examples: to inform public health action in a representative low-middle income country (bangladesh)",
+        "https://w3id.org/CMEO/believe/primary_outcome_specification",
+        "https://w3id.org/CMEO/primary_outcome_specification",
+        "https://w3id.org/CMEO/believe/primary_outcome_specification",
+        "primary outcome specification",
+        "https://w3id.org/CMEO/bigfoot/outcome_specification",
+        "https://w3id.org/CMEO/bigfoot/outcome_specification",
+        "https://w3id.org/CMEO/bigfoot/primary_outcome_specification",
+        "https://w3id.org/CMEO/bigfoot/outcome_specification",
+        "https://w3id.org/CMEO/bigfoot/secondary_outcome_specification",
+        "https://w3id.org/CMEO/bigfoot/outcome_specification",
+        "https://w3id.org/CMEO/outcome_specification",
+        "https://w3id.org/CMEO/bigfoot/outcome_specification",
+        "outcome specification"
+      ],
       "criteria": [
         "be generally fit and well (for blood donation criteria)"
       ]
     },
     "retrieved_embeddings": {
+      "studies": [
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        }
+      ],
+      "Population": [
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "population based",
+          "score": 0.8078248500823975
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        },
+        {
+          "text": "number of participants",
+          "score": 0.5568310022354126
+        }
+      ],
+      "Intervention": [
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "intervention specification",
+          "score": 0.830585777759552
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/intervention_specification>",
+          "score": 0.6599698662757874
+        },
+        {
+          "text": "<https://w3id.org/CMEO/sfdt1/intervention>",
+          "score": 0.575181245803833
+        },
+        {
+          "text": "<https://w3id.org/CMEO/sfdt1/intervention>",
+          "score": 0.575181245803833
+        },
+        {
+          "text": "<https://w3id.org/CMEO/sfdt1/intervention>",
+          "score": 0.575181245803833
+        },
+        {
+          "text": "<https://w3id.org/CMEO/sfdt1/intervention>",
+          "score": 0.575181245803833
+        },
+        {
+          "text": "One session",
+          "score": 0.5739304423332214
+        },
+        {
+          "text": "One session",
+          "score": 0.5739304423332214
+        }
+      ],
+      "Comparison": [
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "comparators specification",
+          "score": 0.7658263444900513
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/comparator_specification>",
+          "score": 0.6175815463066101
+        },
+        {
+          "text": "<https://w3id.org/CMEO/decade/comparator>",
+          "score": 0.5898625254631042
+        },
+        {
+          "text": "<https://w3id.org/CMEO/decade/comparator>",
+          "score": 0.5898625254631042
+        },
+        {
+          "text": "<https://w3id.org/CMEO/decade/comparator>",
+          "score": 0.5898625254631042
+        },
+        {
+          "text": "<https://w3id.org/CMEO/decade/comparator>",
+          "score": 0.5898625254631042
+        },
+        {
+          "text": "Control",
+          "score": 0.5756441354751587
+        },
+        {
+          "text": "Control",
+          "score": 0.5756441354751587
+        }
+      ],
+      "Outcome": [
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        },
+        {
+          "text": "outcome specification",
+          "score": 0.7876431941986084
+        }
+      ],
       "criteria": [
         {
           "text": "<https://w3id.org/CMEO/interval/eligibility_criterion>",
@@ -2678,47 +4383,64 @@
     }
   },
   {
-    "nl": "How are missing values encoded in study A",
-    "nl_keywords": "",
-    "sparql": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cdi: <http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/>\nPREFIX cd: <http://citydata.wu.ac.at/ns#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\nSELECT DISTINCT ?variable ?missing_value\nWHERE {\n    GRAPH <https://w3id.org/CMEO/graph/time-chf>  {\n        ?dataElement a cmeo:data_element;\n            dc:identifier ?variable ;\n            obi:has_value_specification ?missingSpec .\n        ?missingSpec a cmeo:missing_value_specification;\n            cmeo:has_value ?missing_value .\n    }\n}\nLIMIT 3",
-    "graph": "<https://w3id.org/CMEO/graph/time-chf>",
-    "prefix": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cdi: <http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/>\nPREFIX cd: <http://citydata.wu.ac.at/ns#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\n\n",
-    "idx": 8
-  },
-  {
-    "nl": "Which categorical variables does time-chf include, and what are their distributions?",
-    "nl_keywords": "",
-    "sparql": "PREFIX obcs: <http://purl.obolibrary.org/obo/obcs.owl/>\nPREFIX stato: <http://purl.obolibrary.org/obo/stato.owl/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cd: <http://citydata.wu.ac.at/ns#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>\n\nSELECT ?variable ?fq_value\nWHERE {\n    GRAPH <https://w3id.org/CMEO/graph/time-chf> {\n        ?dataElement a cmeo:data_element ;\n             dc:identifier ?variable.\n        ?statistical_variable a ?type;\n            iao:denotes ?dataElement.\n        VALUES ?type { cmeo:binary_class_variable cmeo:multi_class_variable }\n        ?ds a iao:dataset ;\n             iao:is_about ?statistical_variable ;\n             obi:is_specified_input_of ?eda_proc .\n        ?eda_proc a cmeo:exploratory_data_analysis;\n            obi:has_specified_output ?stats .\n        ?stats a stato:statistic ;\n            ro:has_part ?part_uri .\n      OPTIONAL {\n        ?part_uri a obcs:frequency_distribution;\n            cmeo:has_value ?fq_value .\n      }\n  }\n}\nLIMIT 3",
-    "graph": "<https://w3id.org/CMEO/graph/time-chf>",
-    "prefix": "PREFIX obcs: <http://purl.obolibrary.org/obo/obcs.owl/>\nPREFIX stato: <http://purl.obolibrary.org/obo/stato.owl/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX cd: <http://citydata.wu.ac.at/ns#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo: <https://w3id.org/CMEO/>\nPREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>\n\n",
-    "idx": 9
-  },
-  {
-    "nl": "Which variables are similar between selected studies (time-chf and gissi-hf)?",
-    "nl_keywords": "",
-    "sparql": "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>\nPREFIX dc:    <http://purl.org/dc/elements/1.1/>\nPREFIX ro:    <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX obi:   <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX iao:   <http://purl.obolibrary.org/obo/iao.owl/>\nPREFIX bfo:   <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo:  <https://w3id.org/CMEO/>\n\nSELECT\n?omop_id ?code_label ?code_value ?val\n(GROUP_CONCAT(DISTINCT ?varNameA; SEPARATOR=\", \") AS ?source)\n(GROUP_CONCAT(DISTINCT ?varNameB; SEPARATOR=\", \") AS ?target)\n(GROUP_CONCAT(DISTINCT ?visitsA ; SEPARATOR=\", \") AS ?source_visit)\n(GROUP_CONCAT(DISTINCT ?visitsB ; SEPARATOR=\", \") AS ?target_visit)\nWHERE {{\n{{\n    # ---------- TIME-CHF (source) ----------\n    SELECT\n    ?omop_id ?code_label ?code_value ?val\n    (GROUP_CONCAT(DISTINCT ?var_nameA; SEPARATOR=\", \") AS ?varNameA)\n    (GROUP_CONCAT(DISTINCT ?pairA   ; SEPARATOR=\", \") AS ?visitsA)\n    (\"time-chf\" AS ?source)\n    WHERE {{\n    GRAPH <https://w3id.org/CMEO/graph/time-chf>  {{\n        # 1) Most selective: mapping from data element -> standardized code (rdf:_1) -> OMOP\n        ?stdProcessA a cmeo:data_standardization ;\n                    obi:has_specified_output ?codeSetA ;\n                    obi:has_specified_input  ?dataElementA .\n        ?codeSetA rdf:_1 ?codeNodeA .\n        ?codeNodeA a cmeo:code ;\n                cmeo:has_value ?code_value ;\n                rdfs:label     ?code_label ;\n                iao:denotes    ?omopClassA .\n        ?omopClassA a cmeo:omop_id ; cmeo:has_value ?omop_id .\n        # 2) Data element identity (single valued)\n        ?dataElementA a cmeo:data_element ; dc:identifier ?var_nameA .\n        # 3) Optional category value (kept single per DE; if multi, choose one deterministically)\n        OPTIONAL {{\n        ?catProcessA a cmeo:categorization_process ;\n                    obi:has_specified_input  ?dataElementA ;\n                    obi:has_specified_output ?catOutA .\n        ?catOutA cmeo:has_value ?val .\n        }}\n        OPTIONAL {{\n        {{\n            SELECT ?dataElementA (GROUP_CONCAT(DISTINCT ?visitLblA; SEPARATOR=\"|\") AS ?visitStrA)\n            WHERE {{\n            ?visitDatumA a cmeo:visit_measurement_datum ;\n                        iao:is_about ?dataElementA ;\n                        obi:is_specified_input_of ?vsProcA .\n            ?vsProcA obi:has_specified_output ?visitCodeA .\n            ?visitCodeA rdfs:label ?visitLblA .\n            }}\n            GROUP BY ?dataElementA\n        }}\n        }}\n        # 5) Make the (var || visits) pair once, not multiplicatively\n        BIND(COALESCE(?visitStrA, \"\") AS ?visA)\n        BIND(CONCAT(STR(?var_nameA), \"||\", ?visA) AS ?pairA)\n    }}\n    }}\n    GROUP BY ?omop_id ?code_label ?code_value ?val\n}}\nUNION\n{{\n    # ---------- GISSI-HF (target) ----------\n    SELECT\n    ?omop_id ?code_label ?code_value ?val\n    (GROUP_CONCAT(DISTINCT ?var_nameB; SEPARATOR=\", \") AS ?varNameB)\n    (GROUP_CONCAT(DISTINCT ?pairB   ; SEPARATOR=\", \") AS ?visitsB)\n    (\"gissi-hf\" AS ?target)\n    WHERE   {{\n    GRAPH <https://w3id.org/CMEO/graph/gissi-hf> {{\n        ?stdProcessB a cmeo:data_standardization ;\n                    obi:has_specified_output ?codeSetB ;\n                    obi:has_specified_input  ?dataElementB .\n        ?codeSetB rdf:_1 ?codeNodeB .\n        ?codeNodeB a cmeo:code ;\n                cmeo:has_value ?code_value ;\n                rdfs:label     ?code_label ;\n                iao:denotes    ?omopClassB .\n        ?omopClassB a cmeo:omop_id ; cmeo:has_value ?omop_id .\n        ?dataElementB a cmeo:data_element ; dc:identifier ?var_nameB .\n        OPTIONAL {{\n        ?catProcessB a cmeo:categorization_process ;\n                    obi:has_specified_input  ?dataElementB ;\n                    obi:has_specified_output ?catOutB .\n        ?catOutB cmeo:has_value ?val .\n        }}\n        OPTIONAL {{\n        {{\n            SELECT ?dataElementB (GROUP_CONCAT(DISTINCT ?visitLblB; SEPARATOR=\"|\") AS ?visitStrB)\n            WHERE {{\n            ?visitDatumB a cmeo:visit_measurement_datum ;\n                        iao:is_about ?dataElementB ;\n                        obi:is_specified_input_of ?vsProcB .\n            ?vsProcB obi:has_specified_output ?visitCodeB .\n            ?visitCodeB rdfs:label ?visitLblB .\n            }}\n            GROUP BY ?dataElementB\n        }}\n        }}\n        BIND(COALESCE(?visitStrB, \"\") AS ?visB)\n        BIND(CONCAT(STR(?var_nameB), \"||\", ?visB) AS ?pairB)\n    }}\n    }}\n    GROUP BY ?omop_id ?code_label ?code_value ?val\n}}\n}}\nGROUP BY ?omop_id ?code_label ?code_value ?val\nORDER BY ?omop_id",
-    "graph": "<https://w3id.org/CMEO/graph/time-chf>, <https://w3id.org/CMEO/graph/gissi-hf>",
-    "prefix": "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>\nPREFIX dc:    <http://purl.org/dc/elements/1.1/>\nPREFIX ro:    <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX obi:   <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX iao:   <http://purl.obolibrary.org/obo/iao.owl/>\nPREFIX bfo:   <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo:  <https://w3id.org/CMEO/>\n\n",
-    "idx": 10
-  },
-  {
-    "nl": "Which studies have variables measured with wearable devices?",
-    "nl_keywords": "",
-    "sparql": "PREFIX obcs: <http://purl.obolibrary.org/obo/obcs.owl>        # adjust if you use OBCS_\u00e2\u20ac\u00a6 IDs\nPREFIX stato: <http://purl.obolibrary.org/obo/stato.owl/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:  <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo:<https://w3id.org/CMEO/>\nPREFIX ro:  <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>         # if your data used iao.owl as base\n\nSELECT DISTINCT (?g as ?study_name) ?var_name ?device_id\nWHERE {\n    GRAPH ?g {\n        # Start with the data collection process\n        ?dacq_proc a obcs:data_collection;\n                   obi:has_specified_input ?device;      # Find the device used AS INPUT by the process\n                   obi:has_specified_output ?ds.\n        # Now, qualify the device and get its info\n        ?device a cmeo:wearable_device;\n                cmeo:has_value ?device_id.\n        # Continue the chain from the process output to the variable name\n        ?ds a iao:dataset;\n            iao:is_about ?stat_var.\n        ?stat_var iao:denotes ?de.\n        ?de a cmeo:data_element;\n            rdfs:label ?var_name.\n        # (Optional) You can still ensure the device has a sensor if needed\n        # This is now just a filter, not part of the main traversal path\n        ?device ro:has_part ?sensor.\n  }\n}\nLIMIT 5",
-    "graph": "",
-    "prefix": "PREFIX obcs: <http://purl.obolibrary.org/obo/obcs.owl>        # adjust if you use OBCS_\u00e2\u20ac\u00a6 IDs\nPREFIX stato: <http://purl.obolibrary.org/obo/stato.owl/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:  <http://purl.org/dc/elements/1.1/>\nPREFIX bfo: <http://purl.obolibrary.org/obo/bfo.owl/>\nPREFIX cmeo:<https://w3id.org/CMEO/>\nPREFIX ro:  <http://purl.obolibrary.org/obo/ro.owl/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>         # if your data used iao.owl as base\n\n",
-    "idx": 11,
-    "retrieved_terms": {},
-    "retrieved_embeddings": {}
-  },
-  {
+    "idx": 8,
     "nl": "What studies permit data access for research on congestive heart failure, subject to ethics-approval?",
-    "nl_keywords": "congestive heart failure",
+    "nl_keywords": "studies data congestive heart failure ethics",
     "sparql": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:  <http://purl.org/dc/elements/1.1/>\nPREFIX cmeo:<https://w3id.org/CMEO/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>\nPREFIX duo:  <http://purl.obolibrary.org/obo/duo/>\n\nSELECT ?study_name\nWHERE {\n  GRAPH <https://w3id.org/CMEO/graph/studies_metadata> {\n    ?assignment a cmeo:data_use_permission_assignment ;\n                iao:is_about ?x_study ;\n                obi:has_specified_output ?data_policy ;\n                obi:has_specified_output ?data_modifier .\n    ?x_study a obi:study_design_execution ;\n             dc:identifier ?study_name .\n    ?data_policy a duo:data_use_permission ;\n                 rdfs:label \"disease specific research\"^^xsd:string ;\n                 iao:is_about ?disease_code .\n    ?data_modifier a duo:data_use_modifier ;\n                   rdfs:label \"ethics approval required\"^^xsd:string .\n    OPTIONAL { ?disease_code rdfs:label \"congestive heart failure\"^^xsd:string }\n    OPTIONAL { ?disease_code cmeo:has_value \"42343007\"^^xsd:string }\n  }\n}\nORDER BY ?study_name",
     "graph": "<https://w3id.org/CMEO/graph/studies_metadata>",
     "prefix": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>\nPREFIX dc:  <http://purl.org/dc/elements/1.1/>\nPREFIX cmeo:<https://w3id.org/CMEO/>\nPREFIX iao: <http://purl.obolibrary.org/obo/iao.owl/>\nPREFIX duo:  <http://purl.obolibrary.org/obo/duo/>\n\n",
-    "idx": 12,
     "retrieved_terms": {
+      "studies": [
+        "the study includes substudies aimed at evaluating the mechanisms underlying atrial fibrillation (af) recurrence. one substudy focuses on left atrial remodeling, assessing the effect of valsartan on left atrial dimensions using echocardiography. this investigation is based on the hypothesis that valsartan may counteract structural remodeling, such as atrial dilation or fibrosis, which contributes to the onset and maintenance of af. another substudy examines neurohormonal modulation, involving the measurement of key neurohormones including brain natriuretic peptide (bnp), norepinephrine, and aldosterone. these biomarkers serve as indicators of neurohormonal activation, a physiological response commonly observed in patients with af and associated cardiovascular comorbidities.",
+        "to elucidate the complex underlying pathophysiology of t2dm and the interaction with other chronic diseases. this requires not only a large population-based subset of t2dm patients, but also a population-based cohort of individuals without t2dm and individuals at high risk to develop t2dm. such studies are currently not available and the maastricht study intends to fill this gap. it aims to identify determinants of the development and progression of (a) t2dm; (b) its classic complications (cardiovascular disease, retinopathy, neuropathy and nephropathy); and (c) its emerging comorbidities, such as cognitive decline, depression, and gastrointestinal, musculoskeletal and respiratory diseases."
+      ],
+      "data": [
+        "https://w3id.org/CMEO/aachenhf/data_format_specification",
+        "https://w3id.org/CMEO/aachenhf/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification",
+        "https://w3id.org/CMEO/aachenhf/data_format_specification",
+        "data format specification",
+        "https://w3id.org/CMEO/aachenhf/data_format_specification",
+        "https://w3id.org/CMEO/alohas/data_format_specification",
+        "https://w3id.org/CMEO/alohas/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification",
+        "https://w3id.org/CMEO/alohas/data_format_specification",
+        "data format specification",
+        "https://w3id.org/CMEO/alohas/data_format_specification",
+        "https://w3id.org/CMEO/avanti/data_format_specification",
+        "https://w3id.org/CMEO/avanti/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification",
+        "https://w3id.org/CMEO/avanti/data_format_specification",
+        "data format specification",
+        "https://w3id.org/CMEO/avanti/data_format_specification",
+        "https://w3id.org/CMEO/believe/data_format_specification",
+        "https://w3id.org/CMEO/believe/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification",
+        "https://w3id.org/CMEO/believe/data_format_specification",
+        "data format specification",
+        "https://w3id.org/CMEO/believe/data_format_specification",
+        "https://w3id.org/CMEO/bigfoot/data_format_specification",
+        "https://w3id.org/CMEO/bigfoot/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification",
+        "https://w3id.org/CMEO/bigfoot/data_format_specification",
+        "data format specification",
+        "https://w3id.org/CMEO/bigfoot/data_format_specification",
+        "https://w3id.org/CMEO/biostat-chf/data_format_specification",
+        "https://w3id.org/CMEO/biostat-chf/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification",
+        "https://w3id.org/CMEO/biostat-chf/data_format_specification",
+        "data format specification",
+        "https://w3id.org/CMEO/biostat-chf/data_format_specification",
+        "https://w3id.org/CMEO/cachexia/data_format_specification",
+        "https://w3id.org/CMEO/cachexia/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification",
+        "https://w3id.org/CMEO/cachexia/data_format_specification",
+        "data format specification",
+        "https://w3id.org/CMEO/cachexia/data_format_specification",
+        "https://w3id.org/CMEO/card-on-_col/data_format_specification",
+        "https://w3id.org/CMEO/card-on-_col/data_format_specification",
+        "http://purl.obolibrary.org/obo/obi.owl/data_format_specification"
+      ],
       "congestive": [
         "a history of  congestive heart failure hospitalization within the last year",
         "dyspnea not mainly caused by  congestive heart failure",
@@ -2816,9 +4538,254 @@
         "hearth failure",
         "established heart failure",
         "length of time to non-cardiac death (time to total mortality, time to non-fatal heart attack, time to non-fatal acute coronary syndrome,time to survived sudden cardiac death, time to non-fatal end stage renal failure, how long it takes to develop non-steroidal diabetes in patients with pre-diabetes, time taken to develop non-steroidal diabetes in patients with normoglycemia, time taken to develop non-steroidal pre-diabetes in patients with normoglycemia, time taken to develop hfref in patients with heart failure with mildly reduced ejection fraction (hfmref), time taken to develop)"
-      ]
+      ],
+      "ethics": []
     },
     "retrieved_embeddings": {
+      "studies": [
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        },
+        {
+          "text": "observational_design",
+          "score": 0.6334223747253418
+        }
+      ],
+      "data": [
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        },
+        {
+          "text": "data format specification",
+          "score": 0.6993263363838196
+        }
+      ],
       "congestive": [
         {
           "text": "heart failure",
@@ -3183,6 +5150,128 @@
         {
           "text": "established heart failure",
           "score": 0.5339266061782837
+        }
+      ],
+      "ethics": [
+        {
+          "text": "english",
+          "score": 0.5195690393447876
+        },
+        {
+          "text": "english",
+          "score": 0.5195690393447876
+        },
+        {
+          "text": "English",
+          "score": 0.5195690393447876
+        },
+        {
+          "text": "english",
+          "score": 0.5195690393447876
+        },
+        {
+          "text": "english",
+          "score": 0.5195690393447876
+        },
+        {
+          "text": "english",
+          "score": 0.5195690393447876
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "TRUE",
+          "score": 0.5105167627334595
+        },
+        {
+          "text": "patients\u2019 end-of-life preferences",
+          "score": 0.5050968527793884
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
+        },
+        {
+          "text": "objective specification",
+          "score": 0.5001758337020874
         }
       ]
     }

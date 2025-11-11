@@ -154,6 +154,8 @@ if __name__ == "__main__":
         input_excel="experiments/results/llm_eval.xlsx",
         cols = [
             "GPT-5_instant",
+            "Claude",
+            "Llama"
             "Mistral_7B"
         ],
         output_prefix="llm_eval"

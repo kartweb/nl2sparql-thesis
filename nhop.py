@@ -7,8 +7,11 @@ def save_hop_path(idx, path, hop_type="onehop"):
     
     if 0 <= idx < len(pairs):
         if hop_type == "nhop":
-            pairs[idx]["nhop_path"] = path
-            print("N-hop path saved")
+            if "nhop_path" in pairs[idx]:
+                pairs[idx]["nhop_path"].append(path)
+            else:
+                pairs[idx]["nhop_path"] = [path]
+            ("N-hop path saved")
         else:
             pairs[idx]["onehop_path"] = path
             print("One-hop path saved")
