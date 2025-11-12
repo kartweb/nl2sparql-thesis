@@ -1,4 +1,4 @@
-CQ1. Find all studies of diabetes disease
+CQ0. Find all studies of diabetes disease
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>
@@ -34,7 +34,7 @@ WHERE {
 
 
 ------------------****************-----------------------------
-CQ2. Find all studies of coronary heart disease
+CQ1. Find all studies of coronary heart disease
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>
@@ -72,7 +72,7 @@ WHERE {
 ------------------****************-----------------------------
 
 
-CQ3. Find count of variable related to time-chf study
+CQ2. Find count of variable related to time-chf study
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>
@@ -97,7 +97,7 @@ WHERE {
 ------------------****************-----------------------------
 
 
-CQ4. Find count of all drug related variables in study time-chf
+CQ3. Find count of all drug related variables in study time-chf
 
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>
@@ -132,7 +132,7 @@ PREFIX ro: <http://purl.obolibrary.org/obo/ro.owl/>
 
 ------------------****************-----------------------------
 
-CQ5: What are the protocol specifications of the randomized controlled trials?
+CQ4: What are the protocol specifications of the randomized controlled trials?
 
 PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>
 PREFIX dc:   <http://purl.org/dc/elements/1.1/>
@@ -163,7 +163,7 @@ GROUP BY ?study_name
 
 ------------------****************-----------------------------
 
-CQ6:Which studies investigated heart failure condition?
+CQ5:Which studies investigated heart failure condition?
 
 PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>
 PREFIX dc:   <http://purl.org/dc/elements/1.1/>
@@ -199,7 +199,7 @@ WHERE {
 
 ------------------****************-----------------------------
 
-CQ7:What are the population characteristics in different studies
+CQ6:What are the population characteristics in different studies
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX obi: <http://purl.obolibrary.org/obo/obi.owl/>
@@ -231,7 +231,7 @@ LIMIT 3
 
 ------------------****************-----------------------------
 
-CQ8:Which studies match the PICO criteria?
+CQ7:Which studies match the PICO criteria?
 
 PREFIX obi:  <http://purl.obolibrary.org/obo/obi.owl/>
 PREFIX dc:   <http://purl.org/dc/elements/1.1/>
@@ -304,7 +304,7 @@ GROUP BY ?study_name
 
 ------------------****************-----------------------------
 
-CQ9: What studies permit data access for research on congestive heart failure, subject to ethics-approval?
+CQ8: What studies permit data access for research on congestive heart failure, subject to ethics-approval?
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>

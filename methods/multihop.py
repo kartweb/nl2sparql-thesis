@@ -52,7 +52,7 @@ class MultiHop:
     
     def retrieve_n_hops(self, entity_uri):
 
-        if not entity_uri.startswith("<"):
+        if entity_uri.startswith("http"):
             entity_uri = f"<{entity_uri}>"
 
         query = f"""

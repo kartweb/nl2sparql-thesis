@@ -24,8 +24,8 @@ def save_hop_path(idx, path, hop_type="onehop"):
 
 
 if __name__ == "__main__":
-    idx = 6
-    term = "http://purl.obolibrary.org/obo/obi.owl/%28serious%29_adverse_events_diagnosed_at_the_hospital__hearth_attack%2C_stroke%2C_angina%2C_hearth_failure"
+    idx = 8
+    term = "http://purl.obolibrary.org/obo/duo/data_use_modifier"
     
     mh = MultiHop()
     path = mh.retrieve_n_hops(term)
