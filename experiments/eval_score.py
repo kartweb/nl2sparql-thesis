@@ -115,6 +115,7 @@ if __name__ == "__main__":
     run_eval(
         input_excel="experiments/results/methods_eval.xlsx",
         cols=[
+            "only_schema",
             "with_terms",
             "with_embeddings",
             "with_nhop"
@@ -126,27 +127,13 @@ if __name__ == "__main__":
     run_eval(
         input_excel="experiments/results/fewshot_eval.xlsx",
         cols = [
-            "0shot",
+            "only_schema",
             "1shot",
             "2shot",
             "3shot",
             "4shot"
         ],
         output_prefix="fewshot_eval"
-    )
-
-    # Schema Eval
-    run_eval(
-        input_excel="experiments/results/schema_eval.xlsx",
-        cols=[
-            "no_schema",
-            "schema_p",
-            "schema_p_filtered",
-            "schema_po_filtered",
-            "schema_poi_filtered",
-            "schema_poi_filtered_improved_prompt"
-        ],
-        output_prefix="schema_eval"
     )
 
     # LLM eval
