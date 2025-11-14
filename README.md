@@ -4,6 +4,9 @@
 It implements and compares different strategies — including **Retrieval-Augmented Generation (RAG)**, **Few-Shot Learning**, and **Schema Feeding** — to understand how language models reason about structured data and logical queries.
 
 ---
+## Data
+The raw Nl to SPARQL pairs are in:
+`data/nl2sparql_pairs.txt`
 
 ## ⚙️ Installation Requirements
   
