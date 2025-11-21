@@ -110,33 +110,8 @@ def run_eval(input_excel, cols, output_prefix):
     df.to_csv(f"experiments/results/{output_prefix}_score.csv", index=False)
     print("done")
 
+
 if __name__ == "__main__":
-    # Methods Eval
-    run_eval(
-        input_excel="experiments/results/methods_eval.xlsx",
-        cols=[
-            "only_schema",
-            "with_terms",
-            "with_embeddings",
-            "with_nhop"
-        ],
-        output_prefix="methods_eval"
-    )
-
-    # Fewshot Eval
-    run_eval(
-        input_excel="experiments/results/fewshot_eval.xlsx",
-        cols = [
-            "only_schema",
-            "1shot",
-            "2shot",
-            "3shot",
-            "4shot"
-        ],
-        output_prefix="fewshot_eval"
-    )
-
-    # LLM eval
     run_eval(
         input_excel="experiments/results/llm_eval.xlsx",
         cols = [

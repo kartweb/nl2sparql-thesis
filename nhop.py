@@ -11,7 +11,7 @@ def save_hop_path(idx, path, hop_type="onehop"):
                 pairs[idx]["nhop_path"].append(path)
             else:
                 pairs[idx]["nhop_path"] = [path]
-            ("N-hop path saved")
+            print("N-hop path saved")
         else:
             pairs[idx]["onehop_path"] = path
             print("One-hop path saved")
@@ -24,11 +24,14 @@ def save_hop_path(idx, path, hop_type="onehop"):
 
 
 if __name__ == "__main__":
-    idx = 8
-    term = "http://purl.obolibrary.org/obo/duo/data_use_modifier"
-    
     mh = MultiHop()
-    path = mh.retrieve_n_hops(term)
+    idx = 8
+    start = "https://w3id.org/CMEO/dp5/observational_design/protocol"
+    end = "https://w3id.org/CMEO/dp5/outcome_specification"
+
+    path = mh.retrieve_n_hops(start, end)
     
     save_hop_path(idx, path, hop_type="nhop")
     print(path)
+
+    

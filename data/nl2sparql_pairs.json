@@ -466,69 +466,27 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
+          "https://w3id.org/CMEO/aachenhf/study_design_execution",
           "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
+          "https://w3id.org/CMEO/aachenhf/observational_design"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/observational_design",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/objective_specification"
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/objective_specification",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "http://purl.obolibrary.org/obo/obi.owl/objective_specification"
-        ]
-      ],
-      [
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/inclusion_criterion"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion",
+          "https://w3id.org/CMEO/aachenhf/inclusion_criterion",
           "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
           "http://purl.obolibrary.org/obo/obi.owl/inclusion_criterion"
         ]
@@ -1165,69 +1123,27 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
+          "https://w3id.org/CMEO/aachenhf/study_design_execution",
           "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
+          "https://w3id.org/CMEO/aachenhf/observational_design"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/observational_design",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/objective_specification"
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/objective_specification",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "http://purl.obolibrary.org/obo/obi.owl/objective_specification"
-        ]
-      ],
-      [
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/inclusion_criterion"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion",
+          "https://w3id.org/CMEO/aachenhf/inclusion_criterion",
           "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
           "http://purl.obolibrary.org/obo/obi.owl/inclusion_criterion"
         ]
@@ -1569,49 +1485,22 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/dp5/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/dp5/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/dp5/study_design_execution",
+          "https://w3id.org/CMEO/aachenhf/study_design_execution",
           "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/dp5/observational_design"
+          "https://w3id.org/CMEO/aachenhf/observational_design"
         ],
         [
-          "https://w3id.org/CMEO/dp5/observational_design",
-          "http://purl.obolibrary.org/obo/ro.owl/is_concretized_by",
-          "https://w3id.org/CMEO/dp5/study_design_execution"
-        ]
-      ],
-      [
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/observational_design",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/study_design_variable_specification"
+          "https://w3id.org/CMEO/aachenhf/study_design_variable_specification"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/study_design_variable_specification",
+          "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
           "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
           "https://w3id.org/CMEO/study_design_variable_specification"
         ]
@@ -1926,54 +1815,26 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/dp5/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/dp5/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/dp5/study_design_execution",
+          "https://w3id.org/CMEO/aachenhf/study_design_execution",
           "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/dp5/observational_design"
+          "https://w3id.org/CMEO/aachenhf/observational_design"
         ],
         [
-          "https://w3id.org/CMEO/dp5/observational_design",
-          "http://purl.obolibrary.org/obo/ro.owl/is_concretized_by",
-          "https://w3id.org/CMEO/dp5/study_design_execution"
-        ]
-      ],
-      [
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/observational_design",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/study_design_variable_specification"
+          "https://w3id.org/CMEO/aachenhf/study_design_variable_specification"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/study_design_variable_specification",
+          "https://w3id.org/CMEO/aachenhf/study_design_variable_specification",
           "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
           "https://w3id.org/CMEO/study_design_variable_specification"
         ]
-      ],
-      []
+      ]
     ]
   },
   {
@@ -2714,49 +2575,12 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "https://w3id.org/CMEO/randomized_controlled_trial"
-        ]
-      ],
-      [
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/avanti/randomized_controlled_trial",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
+          "https://w3id.org/CMEO/avanti/randomized_controlled_trial/protocol",
           "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
           "http://purl.obolibrary.org/obo/obi.owl/protocol"
         ]
@@ -3374,69 +3198,27 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
+          "https://w3id.org/CMEO/aachenhf/study_design_execution",
           "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
+          "https://w3id.org/CMEO/aachenhf/observational_design"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/observational_design",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/objective_specification"
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/objective_specification",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "http://purl.obolibrary.org/obo/obi.owl/objective_specification"
-        ]
-      ],
-      [
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
+          "https://w3id.org/CMEO/aachenhf/inclusion_criterion"
         ],
         [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion",
+          "https://w3id.org/CMEO/aachenhf/inclusion_criterion",
           "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
           "http://purl.obolibrary.org/obo/obi.owl/inclusion_criterion"
         ]
@@ -3869,39 +3651,29 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/rotterdamstudycohort2/eligibility_criterion",
+          "https://w3id.org/CMEO/aachenhf/study_design_execution",
+          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
+          "https://w3id.org/CMEO/aachenhf/observational_design"
+        ],
+        [
+          "https://w3id.org/CMEO/aachenhf/observational_design",
+          "http://purl.obolibrary.org/obo/ro.owl/has_part",
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol"
+        ],
+        [
+          "https://w3id.org/CMEO/aachenhf/observational_design/protocol",
+          "http://purl.obolibrary.org/obo/ro.owl/has_part",
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion"
+        ],
+        [
+          "https://w3id.org/CMEO/aachenhf/eligibility_criterion",
           "http://purl.obolibrary.org/obo/ro.owl/is_concretized_by",
-          "https://w3id.org/CMEO/rotterdamstudycohort2/human_subject_enrollment"
+          "https://w3id.org/CMEO/aachenhf/human_subject_enrollment"
         ],
         [
-          "https://w3id.org/CMEO/rotterdamstudycohort2/human_subject_enrollment",
-          "http://purl.obolibrary.org/obo/ro.owl/has_output",
-          "https://w3id.org/CMEO/rotterdamstudycohort2/output_population"
-        ],
-        [
-          "https://w3id.org/CMEO/rotterdamstudycohort2/output_population",
-          "http://purl.obolibrary.org/obo/ro.owl/has_characteristic",
-          "http://purl.obolibrary.org/obo/obi.owl/diabetes"
-        ],
-        [
-          "http://purl.obolibrary.org/obo/obi.owl/diabetes",
-          "http://purl.obolibrary.org/obo/ro.owl/is_characteristic_of",
-          "https://w3id.org/CMEO/rotterdamstudycohort1/output_population"
-        ],
-        [
-          "https://w3id.org/CMEO/rotterdamstudycohort1/output_population",
-          "http://purl.obolibrary.org/obo/ro.owl/has_characteristic",
-          "http://purl.obolibrary.org/obo/obi.owl/atrial_fibrillation"
-        ],
-        [
-          "http://purl.obolibrary.org/obo/obi.owl/atrial_fibrillation",
-          "http://purl.obolibrary.org/obo/ro.owl/is_characteristic_of",
-          "https://w3id.org/CMEO/rotterdamstudycohort3/output_population"
-        ],
-        [
-          "https://w3id.org/CMEO/rotterdamstudycohort3/output_population",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "http://purl.obolibrary.org/obo/obi.owl/population"
+          "https://w3id.org/CMEO/aachenhf/human_subject_enrollment",
+          "http://purl.obolibrary.org/obo/ro.owl/has_input",
+          "https://w3id.org/CMEO/aachenhf/input_population"
         ]
       ]
     ]
@@ -4797,11 +4569,6 @@
     "nhop_path": [
       [
         [
-          "https://w3id.org/CMEO/bigfoot/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/bigfoot/study_design_execution"
-        ],
-        [
           "https://w3id.org/CMEO/bigfoot/study_design_execution",
           "http://purl.obolibrary.org/obo/ro.owl/concretizes",
           "https://w3id.org/CMEO/bigfoot/observational_design"
@@ -4825,144 +4592,34 @@
           "https://w3id.org/CMEO/bigfoot/inclusion_criterion",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
           "https://w3id.org/CMEO/bigfoot/health_status_inclusion_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/bigfoot/health_status_inclusion_criterion",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "http://purl.obolibrary.org/obo/obi.owl/health_status_inclusion_criterion"
         ]
       ],
       [
         [
-          "https://w3id.org/CMEO/gissi-hf/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/bigfoot/inclusion_criterion",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/eligibility_criterion",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/inclusion_criterion",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/age_group_inclusion_criterion"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/age_group_inclusion_criterion",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "http://purl.obolibrary.org/obo/obi.owl/age_group_inclusion_criterion"
+          "https://w3id.org/CMEO/bigfoot/age_group_inclusion_criterion"
         ]
       ],
       [
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/dp5/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/intervention"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/intervention",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "https://w3id.org/CMEO/intervention_specification"
+          "https://w3id.org/CMEO/dp5/intervention"
         ]
       ],
       [
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/dp5/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/comparator"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/comparator",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "https://w3id.org/CMEO/comparator_specification"
+          "https://w3id.org/CMEO/dp5/comparator"
         ]
       ],
       [
         [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/ongoing",
-          "http://purl.obolibrary.org/obo/iao.owl/is_about",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/study_design_execution",
-          "http://purl.obolibrary.org/obo/ro.owl/concretizes",
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf-outcomes/randomized_controlled_trial",
-          "http://purl.obolibrary.org/obo/ro.owl/part_of",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial",
+          "https://w3id.org/CMEO/dp5/observational_design/protocol",
           "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/randomized_controlled_trial/protocol",
-          "http://purl.obolibrary.org/obo/ro.owl/has_part",
-          "https://w3id.org/CMEO/gissi-hf/outcome_specification"
-        ],
-        [
-          "https://w3id.org/CMEO/gissi-hf/outcome_specification",
-          "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-          "https://w3id.org/CMEO/outcome_specification"
+          "https://w3id.org/CMEO/dp5/outcome_specification"
         ]
       ]
     ]
@@ -5862,8 +5519,6 @@
       ]
     },
     "nhop_path": [
-      [],
-      []
     ]
   }
 ]
