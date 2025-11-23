@@ -101,10 +101,6 @@ def run_eval(input_excel, cols, output_prefix):
 
     keep_cols = ["query_id"] + [f"bleu_{c}" for c in cols]
     df = df[[c for c in keep_cols if c in df.columns]]
-
-    avg_row = df.mean(numeric_only=True)
-    avg_row["query_id"] = "Average"
-    df = pd.concat([df, pd.DataFrame([avg_row])], ignore_index=True)
     
     print(df)
     df.to_csv(f"experiments/results/{output_prefix}_score.csv", index=False)
