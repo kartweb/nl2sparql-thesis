@@ -1,6 +1,6 @@
 # Retrieval-Augmented Generation and Few-Shot Learning for Natural Language to SPARQL in a Heart Failure Metadata Knowledge Graph
 
-**NL2SPARQL-THESIS** is a research project exploring methods to translate **natural language questions** into **SPARQL queries** for knowledge graph querying.  
+This is a research project exploring methods to translate **natural language questions** into **SPARQL queries** for knowledge graph querying.  
 It implements and compares different strategies including **Retrieval-Augmented Generation (RAG)** and **Few-Shot Learning** to understand how different language models reason about structured data and logical queries.
 
 ---
