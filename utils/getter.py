@@ -9,7 +9,6 @@ class Getter:
             all_pairs = json.load(f)
             return all_pairs
 
-    # get full entry by index
     def get_entry(self, idx):
         data = self.load_data()
         for entry in data:

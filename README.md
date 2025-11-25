@@ -1,14 +1,14 @@
-# NL2SPARQL-THESIS
+# Retrieval-Augmented Generation and Few-Shot Learning for Natural Language to SPARQL in a Heart Failure Metadata Knowledge Graph
 
 **NL2SPARQL-THESIS** is a research project exploring methods to translate **natural language questions** into **SPARQL queries** for knowledge graph querying.  
-It implements and compares different strategies — including **Retrieval-Augmented Generation (RAG)**, **Few-Shot Learning**, and **Schema Feeding** — to understand how language models reason about structured data and logical queries.
+It implements and compares different strategies including **Retrieval-Augmented Generation (RAG)** and **Few-Shot Learning** to understand how different language models reason about structured data and logical queries.
 
 ---
 ## Data
 The raw Nl to SPARQL pairs are in:
 `data/nl2sparql_pairs.txt`
 
-## ⚙️ Installation Requirements
+## Installation Requirements
   
 To install dependencies, run:
 
@@ -38,7 +38,7 @@ This script performs **multi-hop (or one-hop)** relation retrieval starting from
    - `hop_type="onehop"` (default)  
    - `hop_type="nhop"` for multi-hop chains
 
-### 🧾 prompt_generator
+### prompt_generator
 
 Generates a **text prompt** for SPARQL generation using a selected entry from `data/nl2sparql_pairs.json`.
 
@@ -53,7 +53,7 @@ experiments/results/generated_prompt.txt
 See the improved and revised prompt template containing
 two templates (zero-shot and few-shot) ready to use in:
 data/revised_prompt_nl_sparql.pdf
-### 📊 Eval Score
+### Eval Score
 
 Evaluates generated SPARQL queries using **BLEU scores** across multiple experiment files.
 
@@ -62,13 +62,13 @@ This script automatically normalizes SPARQL variables and IRIs, computes BLEU sc
 You can also modify the given cols list for the experiments or add totally new experiments into main for evaluation.
 
 
-### 🧩 Utils
+### Utils
 
 This folder contains small helper scripts for working with the `data/nl2sparql_pairs.json` dataset.
 
 ---
 
-#### 🧹 Clean Data (`clean_pairs.py`)
+#### Clean Data (`clean_pairs.py`)
 Cleans the dataset by **keeping only selected fields** and removing the rest.
 
 Default fields kept:
@@ -83,7 +83,7 @@ You can modify the list inside the script to control which fields are preserved:
 {k: item[k] for k in ("nl", "nl_keywords", "sparql", "graph", "prefix") if k in item}
 ```
 
-#### 📘 Getter
+#### Getter
 
 A lightweight utility for **retrieving entries or specific fields** from `data/nl2sparql_pairs.json`.
 
@@ -101,3 +101,5 @@ A lightweight utility for **retrieving entries or specific fields** from `data/n
 
 Clinical data were provided by the Institute of Data Science (IDS), Maastricht University, under the Code of Conduct for Reuse of Clinical Data for Research Purposes. IDS data are pseudonymized and handled in compliance with applicable privacy regulations.
 
+## CMEO ontology 
+The CMEO ontology used to construct the metadata knowledge graphs is available at: https://github.com/komi786/cmeo/tree/v1.0.1

@@ -82,7 +82,7 @@ def bleu(reference, candidate):
 def run_eval(input_excel, cols, output_prefix):
     df = pd.read_excel(input_excel)
     
-    # === Build a new DataFrame just for normalized text ===
+    # Build a new DataFrame just for normalized text
     df_clean = pd.DataFrame()
     df_clean["query_id"] = df["query_id"]
 
@@ -119,5 +119,5 @@ if __name__ == "__main__":
         output_prefix="llm_eval"
     )
 
-    print("\n✅ All evaluations completed successfully!")
+    print("Scores evaluated")
     
